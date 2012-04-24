@@ -1,0 +1,2 @@
+jQuery ->
+  $('#dock a').desktopWindow

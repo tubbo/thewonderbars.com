@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
   <%= meta_description_from_facebook %>
 </head>
-<body>
+<body id="wonderbars">
 
 <header>
   <%= image_tag 'logo.png' %>
@@ -20,7 +20,7 @@
 </section>
 
 <footer>
-  <nav>
+  <nav id="dock">
     <%= link_to_unless_current "Shows", shows_path %>
     <%= link_to_unless_current "Personnel", members_path %>
     <%= link_to_unless_current "Music", releases_path %>

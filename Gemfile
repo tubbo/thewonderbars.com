@@ -25,23 +25,25 @@ group :communication do
 end
 
 group :test do
-  gem 'minitest'
-  gem 'minitest_spec'
-  gem 'mini_shoulda'
-
+  gem 'vcr', :require=>false
+  gem 'webmock', :require=>false
+  gem 'turn', '>= 0.9.3'
+  gem 'minitest'                      # At least v2.0.2 if using MiniShoulda.
+  gem 'mini_specunit'                 # The goods! Force MiniTest::Spec instead of MiniTest::Unit.
+  gem 'mini_backtrace'                # Use Rails.backtrace_cleaner with MiniTest.
+  gem 'mini_shoulda'                  # A small Shoulda syntax on top of MiniTest::Spec.
+  gem 'mocha'                         # For the occasional black box test.
+  # gem 'simplecov', :require => false  # Test coverage in Ruby 1.9
   gem 'guard-minitest', git: 'git://github.com/guard/guard-minitest.git'
+  gem 'guard-livereload', :require=>false
   gem 'guard-bundler'
+  gem 'guard-jasmine'
   gem 'rb-fsevent'
   gem 'growl'
-
   gem 'spork', git: 'https://github.com/sporkrb/spork.git' #'~> 0.9.0.rc9'
   gem 'guard-spork'
   gem 'spork-testunit', git: 'git://github.com/sporkrb/spork-testunit.git'
   gem 'ruby-prof' # needed to make Spork run on Minitest?
-
-  gem 'vcr'
-  gem 'webmock'
-  gem 'mocha'
 end
 
 group :production do
