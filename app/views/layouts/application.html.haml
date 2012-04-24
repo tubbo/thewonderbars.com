@@ -1,0 +1,26 @@
+!!! 5
+%html
+  %head
+    %title= title_tag
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+    = meta_description_from_facebook
+  %body
+    %header
+      = image_tag 'logo.png'
+
+    %section{id: "desktop"}
+      %h1= content_for :title
+      = yield
+
+    %footer
+      %nav
+        = link_to_unless_current "Shows", shows_path
+        = link_to_unless_current "Personnel", members_path
+        = link_to_unless_current "Music", releases_path
+        = link_to_unless_current "Contact", contact_path
+        = link_to_unless_current "Like Us", facebook.link
+
+      %p
+        Copyright &copy; 2012 The Wonder Bars. All Rights Reserved.
