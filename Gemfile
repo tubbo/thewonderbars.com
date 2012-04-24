@@ -6,7 +6,6 @@ group :framework do
   gem 'unicorn'
   gem 'capistrano'
   gem 'jquery-rails'
-  gem 'haml'
   gem 'debugger'
 end
 
