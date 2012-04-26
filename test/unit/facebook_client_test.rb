@@ -9,9 +9,9 @@ class FacebookClientTest < ActiveSupport::TestCase
   #   refute_nil @facebook.access_token, "Access token generation failed: #{@facebook.errors}"
   # end
 
-  should "connect to the open graph" do
-    assert @facebook.connected?, "Did not connect to the graph: #{@facebook.errors}"
-  end
+  # should "connect to the open graph" do
+  #   assert @facebook.connected?, "Did not connect to the graph: #{@facebook.errors}"
+  # end
 
   # should "retrieve the about attribute from the page" do
   #   assert_equal "Live, improvised dance music from Philadelphia", @facebook.about

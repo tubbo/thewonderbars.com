@@ -1,16 +1,16 @@
-# A client for the Facebook graph API which looks for data on a specific Facebook page or profile. It
-# reads from a YAML config or passed in options and
+# A client for the Facebook Graph API which looks for data on a specific Facebook page or profile. It
+# reads from the YAML configuration stored in `config/facebook.yml` for the current Rails environment.
 class FacebookClient
-  attr_reader :graph, :page, :oauth
+  attr_reader :graph, :page, :oauth, :config
 
   # Connects to the open graph.
   def initialize options={}
     @config = Facebook::CONFIG # [TODO] DECOUPLE!!
     @oauth = Koala::Facebook::OAuth.new(client_id: @config[:app_id], client_secret: @config[:secret_key])
-    @graph = Koala::Facebook::API.new \
-      app_id: @config[:app_id],
-      app_secret: @config[:secret_key],
-      access_token: @oauth.get_app_access_token #"109898403861|DGdiK3tay_jZnHKYPqPBeU2fkRA"
+    # @graph = Koala::Facebook::API.new \
+    #   app_id: @config[:app_id],
+    #   app_secret: @config[:secret_key],
+    #   access_token: @oauth.get_app_access_token #"109898403861|DGdiK3tay_jZnHKYPqPBeU2fkRA"
     @page = @graph.get_object(@config[:page_id])
   end
 
