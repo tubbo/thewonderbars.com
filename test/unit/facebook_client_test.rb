@@ -13,15 +13,17 @@ class FacebookClientTest < ActiveSupport::TestCase
   #   assert @facebook.connected?, "Did not connect to the graph: #{@facebook.errors}"
   # end
 
-  # should "retrieve the about attribute from the page" do
-  #   assert_equal "Live, improvised dance music from Philadelphia", @facebook.about
-  # end
+#   should "retrieve the about attribute from the page" do
+#     assert_equal "Live, improvised dance music from Philadelphia", @facebook.about
+#   end
 
-  # should "retrieve the bio attribute from the page" do
-  #   refute_nil @facebook.bio
-  # end
+  should "retrieve the bio attribute from the page" do
+    VCR.use_cassette(:facebook) do
+      assert_equal "The Wonder Bars", @facebook.name
+    end
+  end
 
-  # should "throw an error when attempting to access an attribute that doesn't exist" do
-  #   assert_error @facebook.great_google_moogle, FacebookClient::AttributeNotFound
-  # end
+  should "throw an error when attempting to access an attribute that doesn't exist" do
+    assert_error @facebook.great_google_moogle, FacebookClient::AttributeNotFound
+  end
 end

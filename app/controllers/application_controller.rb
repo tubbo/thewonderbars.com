@@ -3,6 +3,6 @@ class ApplicationController < ActionController::Base
 
   # Shorthand accessor for the omnipresent Facebook client
   def facebook
-    FacebookClient.new
+    @facebook_client ||= FacebookClient.new
   end
 end
