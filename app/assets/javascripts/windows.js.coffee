@@ -17,7 +17,8 @@ class DesktopWindowLink
         desktop_window.html response
         this.clear()
         $('#desktop').append desktop_window
-        desktop_window.show
+        desktop_window.show()
+        this.updateURL()
     }
 
   # Clears all existing .windows from the #desktop
@@ -25,6 +26,15 @@ class DesktopWindowLink
     $("#desktop .#{@config.windowClass}").fadeOut 250
     $("#desktop .#{@config.windowClass}").remove()
     this
+
+  updateURL: ->
+    if window.history.pushState?
+      state = {
+        action: @element.attr('id')
+      }
+      window.history.pushState(state, @element.attr('id'), "/#{@element.attr('id')}")
+    else
+      location.hash = "!#{@element.attr('id')}"
 
 jQuery.fn.desktopWindow (options) ->
   config = {
