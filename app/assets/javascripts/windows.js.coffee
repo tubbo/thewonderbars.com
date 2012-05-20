@@ -2,55 +2,43 @@
 # `.window` class in your stylesheets to stylize how the windows look.
 #
 # Windows are closed automatically when new links are opened.
-class DesktopWindowLink
-  constructor: (element, config) ->
-    @element = element
+class DesktopWindow
+  constructor: (link, config) ->
     @config = config
+    @href = link.attr('href')
+    @id = @href.split('/').join('')
 
-  # GETs the page over Ajax and displays it in a .window
+  # GETs the page over Ajax and displays it in a .window. Clears out
+  # other .windows if `config.windowClass = true`. Additionally, if
+  # a cached window is found in the DOM
   render: ->
-    $.ajax {
-      url: @element.attr 'url'
+    unless @config.allowMultipleWindows
+      $("#desktop .#{@config.windowClass}").hide()
 
-      success: (response) ->
-        desktop_window = $("<div class=\"#{@config.windowClass}\"></div>")
-        desktop_window.html response
-        this.clear()
-        $('#desktop').append desktop_window
-        desktop_window.show()
-        this.updateURL()
-    }
-
-  # Clears all existing .windows from the #desktop
-  clear: ->
-    $("#desktop .#{@config.windowClass}").fadeOut 250
-    $("#desktop .#{@config.windowClass}").remove()
-    this
-
-  updateURL: ->
-    if window.history.pushState?
-      state = {
-        action: @element.attr('id')
-      }
-      window.history.pushState(state, @element.attr('id'), "/#{@element.attr('id')}")
+    if $("##{id}").length
+      @element = $("##{id}")
+      @element.show()
     else
-      location.hash = "!#{@element.attr('id')}"
+      $.ajax {
+        url: href
+        success: (response) ->
+          @element = $("<div data-url=\"#{@href}\" class=\"#{@config.windowClass}\"></div>")
+          @element.html(response)
+          $('#desktop').append(@element)
+          @element.show()
+      }
 
-jQuery.fn.desktopWindow (options) ->
+jQuery.fn.openInDesktopWindow (options) ->
   config = {
-    multiWindows: false
-    closeButton: "/assets/close.png"
+    allowMultipleWindows: false
     windowClass: "window"
   }
   $.fn.extend config, options
 
-  element = $(this)
-  element.click (event) ->
+  $(this).click (event) ->
     event.preventDefault()
-    desktop_window_link = new DesktopWindowLink(element, config)
-    desktop_window_link.clear().render()
+    new DesktopWindow(element, config)
 
   $('.window .close').live 'click' (event) ->
     event.preventDefault()
-    $(this).fadeOut 250
     $(this).remove()

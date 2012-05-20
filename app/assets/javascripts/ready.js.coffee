@@ -1,2 +1,2 @@
 jQuery ->
-  $('#dock a').desktopWindow
+  $('nav a').openInDesktopWindow()

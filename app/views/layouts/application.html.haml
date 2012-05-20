@@ -8,19 +8,15 @@
     = meta_description_from_facebook
   %body
     %header
-      = image_tag 'logo.png'
+      %h1 The Wonder Bars
 
-    %section{id: "desktop"}
+    #desktop
       %h1= content_for :title
       = yield
 
     %footer
       %nav
-        = link_to_unless_current "Shows", shows_path
-        = link_to_unless_current "Personnel", members_path
-        = link_to_unless_current "Music", releases_path
-        = link_to_unless_current "Contact", contact_path
-        = link_to_unless_current "Like Us", facebook.link
-
-      %p
-        Copyright &copy; 2012 The Wonder Bars. All Rights Reserved.
+        = link_to_unless_current "Shows",     shows_path, :class => "link"
+        = link_to_unless_current "Music",     releases_path, :class => "link"
+        = link_to_unless_current "Personnel", about_path, :class => "link"
+        = link_to_unless_current "Contact",   contact_path, :class => "link"

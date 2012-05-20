@@ -1,14 +1,47 @@
-// The big splash logo at the top right corner of the screen
+// Use the logo as a background image. Works on all browsers.
+body {
+  background: image-url('logo-background.png');
+}
+
+// For HTML5 browsers, a special link appears when you click the logo.
 header {
+  display:none;
+
+  h1 {
+    color: #FF0000;
+  }
+}
+
+// The "Desktop" is where all PrimaryColors UI windows appear. It is an amorphous space that takes
+// up the entire screen (and even overshadows the <header>), allowing UI windows to be dragged
+// anywhere.
+#desktop {
 
 }
 
-// The "Desktop", where all new windows are opened up
-section {
-
-}
-
-// The "Dock", where the nav menu is.
+// The "Dock" is the navigation menu. It provides links to the pages on this site as well as an
+// indicator of where you are currently in the site.
 footer {
+  nav {
+    .link {
+      font: $brandon 36px;
+      padding-right: 15px;
+      display: inline-block;
 
+      &a {
+        text-decoration: none;
+
+        &:link, &:visited {
+          color: #FF0000;
+        }
+        &:hover, &:active {
+          color: #FFF;
+        }
+      }
+      &strong {
+        font-weight: normal;
+        color: #FFF;
+      }
+    }
+  }
 }

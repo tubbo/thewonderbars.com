@@ -5,11 +5,6 @@ require 'bundler'
 require 'vcr'
 require 'webmock'
 
-VCR.configure do |c|
-  c.cassette_library_dir = 'fixtures/vcr_cassettes'
-  c.hook_into :webmock # or :fakeweb
-end
-
 class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.(yml|csv) for all tests in alphabetical order.
   #
@@ -18,4 +13,10 @@ class ActiveSupport::TestCase
   fixtures :all
 
   Bundler.require :test
+
+  VCR.configure do |c|
+    c.cassette_library_dir = 'fixtures/cassettes'
+    c.hook_into :webmock # or :fakeweb
+    # c.allow_http_connections_when_no_cassette = true
+  end
 end

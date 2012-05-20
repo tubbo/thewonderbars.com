@@ -7,6 +7,7 @@ group :framework do
   gem 'capistrano'
   gem 'jquery-rails'
   gem 'debugger'
+  gem 'redcarpet'
 end
 
 group :assets do
