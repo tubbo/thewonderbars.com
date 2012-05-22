@@ -3,8 +3,8 @@ development:
   encoding: unicode
   database: wonderbars_development
   pool: 5
-  username: bread
-  password: wonderbars
+  username: wonder
+  password: br3ad
   # min_messages: warning
 
 # Warning: The database defined as "test" will be erased and
@@ -15,13 +15,13 @@ test:
   encoding: unicode
   database: wonderbars_test
   pool: 5
-  username: bread
-  password: wonderbars
+  username: wonder
+  password: br3ad
 
 production:
   adapter: postgresql
   encoding: unicode
   database: wonderbars_production
   pool: 5
-  username: wonderbars
-  password:
+  username: wonder
+  password: br3ad

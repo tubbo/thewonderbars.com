@@ -2,16 +2,16 @@
 # here which get multiple data sources.
 class FacebookController < ApplicationController
   # Gets any attribute from the Facebook page and displays it in the page_attribute template.
-  def method_missing attribute_name
+  def action_missing attribute_name
     if facebook.has_attribute? attribute_name
-      attribute_content = facebook.send(attribute).gsub(/\n/, "<br>")
+      attribute_content = facebook.send(:"#{attribute_name}").gsub(/\n/, "<br>")
       render partial: 'page_attribute', locals: {
         name: attribute_name.parameterize,
         title: attribute_name.titleize,
         body: attribute_content
       }
     else
-      render partial: 'attribute_not_found', locals: { attribute_name: "#{attribute}" }
+      render partial: 'attribute_not_found', locals: { attribute_name: "#{attribute_name}" }
     end
   end
 

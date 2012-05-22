@@ -1,9 +1,9 @@
 ENV["RAILS_ENV"] = "test"
 require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
+
 require 'bundler'
-require 'vcr'
-require 'webmock'
+Bundler.setup :default, :test
 
 class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.(yml|csv) for all tests in alphabetical order.
@@ -12,7 +12,7 @@ class ActiveSupport::TestCase
   # -- they do not yet inherit this setting
   fixtures :all
 
-  Bundler.require :test
+  Bundler.require :default, :test
 
   VCR.configure do |c|
     c.cassette_library_dir = 'fixtures/cassettes'
