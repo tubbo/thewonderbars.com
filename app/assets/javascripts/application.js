@@ -12,4 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require ext
+//= require ext_config
 //= require_tree .

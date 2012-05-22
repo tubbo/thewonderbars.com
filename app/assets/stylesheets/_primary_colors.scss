@@ -40,7 +40,7 @@
     &:link, &:visited {
       color: #0000FF;
     }
-    &:hover, &:active {
+    &:hover, &:active, &.clicked {
       color: #FFF;
     }
   }
