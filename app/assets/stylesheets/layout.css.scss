@@ -27,8 +27,7 @@ header {
 // indicator of where you are currently in the site.
 footer {
   nav {
-    a { @include big-red-nav-link; }
-    strong { @include big-red-nav-link; }
+    .link { @include big-red-nav-link; }
   }
 }
 

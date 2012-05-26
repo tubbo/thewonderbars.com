@@ -15,7 +15,7 @@
 
     %footer
       %nav
-        = link_to_unless_current "Shows",     shows_path, class: "link", title: "That's What's Up"
-        = link_to_unless_current "Music",     releases_path, class: "link", title: "What We Sound Like"
-        = link_to_unless_current "Personnel", about_path, class: "link", title: "Who Are The Wonder Bars?"
-        = link_to_unless_current "Contact",   contact_path, class: "link", title: "Make Contact"
+        %span.link= link_to_unless_current "Shows",     shows_path, title: "That's What's Up"
+        %span.link= link_to_unless_current "Music",     releases_path, title: "What We Sound Like"
+        %span.link= link_to_unless_current "Personnel", about_path, title: "Who Are The Wonder Bars?"
+        %span.link= link_to_unless_current "Contact",   contact_path, title: "Make Contact"
