@@ -27,4 +27,11 @@ class FacebookController < ApplicationController
     @management_email = facebook.general_manager
     @booking_email = facebook.booking_agent
   end
+
+  private
+  
+  # Shorthand accessor for the omnipresent Facebook client
+  def facebook
+    @facebook_client ||= FacebookClient.new
+  end
 end

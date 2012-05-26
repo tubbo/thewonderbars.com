@@ -1,7 +1,5 @@
-<dl id="{{ attribute.name }}">
-  <dt>{{ attribute.title }}</dt>
+%dl{ id: attribute.name }
+  %dt= attribute.title
 
-  <dd>
-    {{ attribute.body }}
-  </dd>
-</dl>
+  %dd
+    = attribute.body
