@@ -16,6 +16,7 @@ group :assets do
   gem 'haml-rails'
   gem 'therubyracer', platform: :ruby
   gem 'bootstrap-sass', '~> 2.0.2'
+  gem 'sproutcore-rails'
 end
 
 group :communication do

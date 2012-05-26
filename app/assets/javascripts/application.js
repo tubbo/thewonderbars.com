@@ -12,6 +12,5 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require ext
-//= require ext_config
+//= require sproutcore
 //= require_tree .
