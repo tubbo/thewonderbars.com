@@ -15,11 +15,18 @@
 
         #desktop.span-10
           = yield
+          = image_tag 'spinner.gif', id: 'spinner'
 
       .row-fluid
         %footer.span-12
           %nav
-            %span.link= link_to_unless_current "Shows",     shows_path, title: "That's What's Up"
-            %span.link= link_to_unless_current "Music",     releases_path, title: "What We Sound Like"
-            %span.link= link_to_unless_current "Personnel", about_path, title: "Who Are The Wonder Bars?"
-            %span.link= link_to_unless_current "Contact",   contact_path, title: "Make Contact"
+            = link_to "Shows",     shows_path,    title: "That's What's Up", class: "link"
+            = link_to "Music",     releases_path, title: "What We Sound Like", class: "link"
+            = link_to "Personnel", about_path,    title: "Who Are The Wonder Bars?", class: "link"
+            = link_to "Contact",   contact_path,  title: "Make Contact", class: "link"
+
+          %object{:height => "18", :width => "100%", :id => "player"}
+            %param{:name => "movie", :value => "https://player.soundcloud.com/player.swf?url=http%3A%2F%2Fapi.soundcloud.com%2Fplaylists%2F1220342&auto_play=true&player_type=tiny&font=Verdana&color=0000ff"}
+            %param{:name => "allowscriptaccess", :value => "always"}
+            %param{:name => "wmode", :value => "transparent"}
+            %embed{:allowscriptaccess => "always", :height => "18", :src => "https://player.soundcloud.com/player.swf?url=http%3A%2F%2Fapi.soundcloud.com%2Fplaylists%2F1220342&auto_play=true&player_type=tiny&font=Verdana&color=0000ff", :type => "application/x-shockwave-flash", :width => "100%", :wmode => "transparent"}

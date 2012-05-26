@@ -19,16 +19,17 @@ header {
   padding: 50px;
   min-height: 555px;
 
-  div {
-    @include wonder-window
-  }
+  div { @include wonder-window }
+  #spinner { @include ridin-spinnas }
 }
 
 // The "Dock" is the navigation menu. It provides links to the pages on this site as well as an
 // indicator of where you are currently in the site.
 footer {
   nav {
-    .link { @include big-red-nav-link; }
+    a { @include big-red-nav-link }
   }
+
+  #player { margin: 30px 30px 0px 30px }
 }
 

@@ -20,12 +20,14 @@ class FacebookController < ApplicationController
     @tagline = facebook.about
     @elevator_pitch = facebook.description
     @long_form_bio = facebook.bio
+    render layout: false if request.xhr?
   end
 
   # Accesses some basic contact information
   def contact
     @management_email = facebook.general_manager
     @booking_email = facebook.booking_agent
+    render layout: false if request.xhr?
   end
 
   private
@@ -33,5 +35,13 @@ class FacebookController < ApplicationController
   # Shorthand accessor for the omnipresent Facebook client
   def facebook
     @facebook_client ||= FacebookClient.new
+  end
+
+  def use_layout
+    if request.xhr?
+      false
+    else
+      'application'
+    end
   end
 end

@@ -1,7 +1,7 @@
 // A #desktop .window on the site. Color scheme for all pages.
 @mixin wonder-window {
   background: rgba(255, 255, 255, 0.94);
-  border: 1px solid #000;
+  border: 1px solid #0000FF;
   padding: 35px;
   width: 560px;
   height: 480px;
@@ -15,6 +15,10 @@
   h2 {
     font: $brandon 24px;
     color: #0000FF;
+  }
+
+  h2,h3,h4,h5,h6 {
+    margin-bottom: 24px;
   }
 
   table {
@@ -43,15 +47,17 @@
   padding-left: 35px;
   display: inline-block;
 
-  &a {
-    text-decoration: none;
-
-    &:link, &:visited {
-      color: #FF0000;
-    }
-    &:hover, &:active {
-      color: #000;
-    }
-  }
+  &:link { color: #FF0000; }
+  &:visited { color: #FF0000; }
+  &:hover { color: #000; text-decoration:none; }
+  &:active { color: #000; }
+  &.clicked { color: #000; }
 }
 
+@mixin ridin-spinnas {
+  margin-left: 500px;
+  margin-top: 200px;
+  display: none;
+  width: 20%;
+  height: 20%;
+}
