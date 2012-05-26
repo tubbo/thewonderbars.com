@@ -7,15 +7,19 @@
     = csrf_meta_tags
     = meta_description_from_facebook unless Rails.env.test?
   %body
-    %header
-      %h1 The Wonder Bars
+    #wonderbars.fluid-container
 
-    #desktop
-      = yield
+      .row-fluid
+        %header.span-2
+          %h1 The Wonder Bars
 
-    %footer
-      %nav
-        %span.link= link_to_unless_current "Shows",     shows_path, title: "That's What's Up"
-        %span.link= link_to_unless_current "Music",     releases_path, title: "What We Sound Like"
-        %span.link= link_to_unless_current "Personnel", about_path, title: "Who Are The Wonder Bars?"
-        %span.link= link_to_unless_current "Contact",   contact_path, title: "Make Contact"
+        #desktop.span-10
+          = yield
+
+      .row-fluid
+        %footer.span-12
+          %nav
+            %span.link= link_to_unless_current "Shows",     shows_path, title: "That's What's Up"
+            %span.link= link_to_unless_current "Music",     releases_path, title: "What We Sound Like"
+            %span.link= link_to_unless_current "Personnel", about_path, title: "Who Are The Wonder Bars?"
+            %span.link= link_to_unless_current "Contact",   contact_path, title: "Make Contact"

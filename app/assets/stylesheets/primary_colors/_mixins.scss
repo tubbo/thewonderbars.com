@@ -1,9 +1,12 @@
 // A #desktop .window on the site. Color scheme for all pages.
 @mixin wonder-window {
-  background: #FFF;
+  background: rgba(255, 255, 255, 0.94);
   border: 1px solid #000;
-  margin: 0 300px 0px 501px;
   padding: 35px;
+  width: 560px;
+  height: 480px;
+  margin-left: 300px;
+  overflow: scroll;
 
   .close {
 
@@ -35,8 +38,9 @@
 
 // The big red links at the bottom of the page.
 @mixin big-red-nav-link {
-  font: $brandon 36px;
-  padding-right: 15px;
+  font: 36px $brandon;
+  font-weight: bold;
+  padding-left: 35px;
   display: inline-block;
 
   &a {
@@ -46,13 +50,8 @@
       color: #FF0000;
     }
     &:hover, &:active {
-      color: #FFF;
+      color: #000;
     }
-  }
-
-  &strong {
-    font-weight: normal;
-    color: #FFF;
   }
 }
 

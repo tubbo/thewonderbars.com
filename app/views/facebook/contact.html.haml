@@ -5,10 +5,8 @@
 
   %h2 Wanna book us?
 
-  %p
-    = mail_to "Get in contact with our booking agent", @booking_email
+  %h3= mail_to @booking_email, "Get in contact with our booking agent"
 
   %h2 For all other inquiries
 
-  %p
-    = mail_to "Talk to management", @management_email
+  %h3= mail_to @management_email, "Talk to management"

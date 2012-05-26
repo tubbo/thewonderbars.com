@@ -1,13 +1,13 @@
 // Use the logo as a background image. Works on all browsers.
-body {
-  background: image-url('logo-background.png');
+#wonderbars {
+  background: url('/assets/logo-background.png') no-repeat;
+  min-height: 720px;
 }
 
 // For HTML5 browsers, a special link appears when you click the logo.
 header {
-  display:none;
-
   h1 {
+    display: none;
     color: #FF0000;
   }
 }
@@ -17,6 +17,7 @@ header {
 // anywhere.
 #desktop {
   padding: 50px;
+  min-height: 555px;
 
   div {
     @include wonder-window
