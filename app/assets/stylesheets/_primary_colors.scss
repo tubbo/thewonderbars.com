@@ -4,11 +4,3 @@
 
 @import "primary_colors/fonts";
 @import "primary_colors/mixins";
-
-#desktop {
-  padding: 50px;
-}
-
-#desktop > div {
-  @include wonder-window;
-}

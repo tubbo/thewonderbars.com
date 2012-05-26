@@ -16,32 +16,19 @@ header {
 // up the entire screen (and even overshadows the <header>), allowing UI windows to be dragged
 // anywhere.
 #desktop {
+  padding: 50px;
 
+  div {
+    @include wonder-window
+  }
 }
 
 // The "Dock" is the navigation menu. It provides links to the pages on this site as well as an
 // indicator of where you are currently in the site.
 footer {
   nav {
-    .link {
-      font: $brandon 36px;
-      padding-right: 15px;
-      display: inline-block;
-
-      &a {
-        text-decoration: none;
-
-        &:link, &:visited {
-          color: #FF0000;
-        }
-        &:hover, &:active {
-          color: #FFF;
-        }
-      }
-      &strong {
-        font-weight: normal;
-        color: #FFF;
-      }
-    }
+    a { @include big-red-nav-link; }
+    strong { @include big-red-nav-link; }
   }
 }
+

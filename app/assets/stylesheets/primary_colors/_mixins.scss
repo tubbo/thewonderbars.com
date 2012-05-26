@@ -1,46 +1,58 @@
 // A #desktop .window on the site. Color scheme for all pages.
 @mixin wonder-window {
-    background: #FFF;
-    border: 1px solid #000;
-    margin: 0 300px 0px 501px;
-    padding: 35px;
+  background: #FFF;
+  border: 1px solid #000;
+  margin: 0 300px 0px 501px;
+  padding: 35px;
 
-    .close {
+  .close {
 
-    }
+  }
 
-    h2 {
-      font: $brandon 24px;
-      color: #0000FF;
-    }
+  h2 {
+    font: $brandon 24px;
+    color: #0000FF;
+  }
 
-    table {
-      thead {
-        border-bottom: 1px solid #FF0000;
+  table {
+    thead {
+      border-bottom: 1px solid #FF0000;
 
-        th {
-          font-family: $helvetica;
-          font-weight: bold;
-        }
-      }
-      tbody {
-        margin-top: 10px;
+      th {
+        font-family: $helvetica;
+        font-weight: bold;
       }
     }
-
-    h3 {
-      font: $helvetica 14px;
-    }
-
-    a {
-      text-decoration: none;
-
-      &:link, &:visited {
-        color: #0000FF;
-      }
-      &:hover, &:active, &.clicked {
-        color: #FFF;
-      }
+    tbody {
+      margin-top: 10px;
     }
   }
+
+  h3 {
+    font: $helvetica 14px;
+  }
 }
+
+// The big red links at the bottom of the page.
+@mixin big-red-nav-link {
+  font: $brandon 36px;
+  padding-right: 15px;
+  display: inline-block;
+
+  &a {
+    text-decoration: none;
+
+    &:link, &:visited {
+      color: #FF0000;
+    }
+    &:hover, &:active {
+      color: #FFF;
+    }
+  }
+
+  &strong {
+    font-weight: normal;
+    color: #FFF;
+  }
+}
+
