@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 group :framework do
   gem 'rails', '3.2.3'
   gem 'pg'
-  gem 'unicorn'
   gem 'capistrano'
   gem 'jquery-rails'
   gem 'debugger'
@@ -22,6 +21,10 @@ end
 group :communication do
   gem 'koala'
   gem 'soundcloud'
+end
+
+group :development do
+  gem 'thin'
 end
 
 group :test do
@@ -48,4 +51,5 @@ end
 
 group :production do
   gem 'syslogger'
+  gem 'unicorn'
 end
