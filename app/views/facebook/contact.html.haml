@@ -1,13 +1,14 @@
-%dl#contact
-  %dt Contact The Wonder Bars
+#contact.window
+  %h1 Contact The Wonder Bars
 
-  %dd
-    %h2 Wanna book us?
-    %p
-      Get in contact with
-      = mail_to "our booking agent", @booking_email
+  %p You too can contact The Wonder Bars...
 
-    %h3 For all other inquiries
-    %p
-      Talk to
-      = mail_to "management", @management_email
+  %h2 Wanna book us?
+
+  %p
+    = mail_to "Get in contact with our booking agent", @booking_email
+
+  %h2 For all other inquiries
+
+  %p
+    = mail_to "Talk to management", @management_email

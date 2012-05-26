@@ -2,46 +2,13 @@
 // Twitter Bootstrap as a base. All UI windows are using this theme,
 // with the rest of the site free to use its own design.
 
-.window {
-  background: #FFF;
-  opacity: 0.7;
-  border: 1px solid #000;
+@import "primary_colors/fonts";
+@import "primary_colors/mixins";
 
-  .close {
+#desktop {
+  padding: 50px;
+}
 
-  }
-
-  h2 {
-    font: $brandon 24px;
-    color: #0000FF;
-  }
-
-  table {
-    thead {
-      border-bottom: 1px solid #FF0000;
-
-      th {
-        font-family: $helvetica;
-        font-weight: bold;
-      }
-    }
-    tbody {
-      margin-top: 10px;
-    }
-  }
-
-  h3 {
-    font: $helvetica 14px;
-  }
-
-  a {
-    text-decoration: none;
-
-    &:link, &:visited {
-      color: #0000FF;
-    }
-    &:hover, &:active, &.clicked {
-      color: #FFF;
-    }
-  }
+#desktop > div {
+  @include wonder-window;
 }
