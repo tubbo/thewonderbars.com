@@ -26,6 +26,9 @@ jQuery ->
 
         new_window.fadeIn slowly
 
+        if history?
+          history.pushState null, "#{link.text()} | The Wonder Bars", link.attr('href')
+
       failure: (xhr, error) ->
         alert error
     }
