@@ -6,7 +6,7 @@ jQuery ->
 
   # Spinner gif gets loaded in between requests
   desktop.ajaxSend -> spinner.css('display', 'inline')
-         .ajaxComplete -> spinner.css('display', 'none')
+         .ajaxComplete -> spinner.css('display', 'none')<D-r>
 
   # Requests pages with Pjax sorta.
   $('nav a').on 'click', (event) ->
