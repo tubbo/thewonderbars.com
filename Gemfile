@@ -3,10 +3,15 @@ source 'https://rubygems.org'
 group :framework do
   gem 'rails', '3.2.3'
   gem 'pg'
-  gem 'capistrano'
   gem 'jquery-rails'
   gem 'debugger'
   gem 'redcarpet'
+end
+
+group :deployment do
+  gem 'capistrano'
+  gem 'rvm'
+  gem 'rvm-capistrano', require: false
 end
 
 group :assets do

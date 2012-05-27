@@ -190,6 +190,9 @@ GEM
       json (~> 1.4)
     redcarpet (2.1.1)
     ruby-prof (0.10.8)
+    rvm (1.11.3.3)
+    rvm-capistrano (1.2.2)
+      capistrano (>= 2.0.0)
     sass (3.1.16)
     sass-rails (3.2.5)
       railties (~> 3.2.0)
@@ -258,6 +261,8 @@ DEPENDENCIES
   rb-fsevent
   redcarpet
   ruby-prof
+  rvm
+  rvm-capistrano
   sass-rails (~> 3.2.3)
   soundcloud
   spork!
