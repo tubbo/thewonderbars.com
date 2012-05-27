@@ -24,9 +24,8 @@
             = link_to "Music",     releases_path, title: "What We Sound Like", class: "link"
             = link_to "Personnel", about_path,    title: "Who Are The Wonder Bars?", class: "link"
             = link_to "Contact",   contact_path,  title: "Make Contact", class: "link"
-
-          %object{:height => "18", :width => "100%", :id => "player"}
-            %param{:name => "movie", :value => "https://player.soundcloud.com/player.swf?url=http%3A%2F%2Fapi.soundcloud.com%2Fplaylists%2F1220342&auto_play=true&player_type=tiny&font=Verdana&color=0000ff"}
+          %object{:id => "player", :height => "18", :width => "100%"}
+            %param{:name => "movie", :value => "https://player.soundcloud.com/player.swf?url=http%3A%2F%2Fapi.soundcloud.com%2Fplaylists%2F1220342&auto_play=false&player_type=tiny&font=Arial&color=0000ff"}
             %param{:name => "allowscriptaccess", :value => "always"}
             %param{:name => "wmode", :value => "transparent"}
-            %embed{:allowscriptaccess => "always", :height => "18", :src => "https://player.soundcloud.com/player.swf?url=http%3A%2F%2Fapi.soundcloud.com%2Fplaylists%2F1220342&auto_play=true&player_type=tiny&font=Verdana&color=0000ff", :type => "application/x-shockwave-flash", :width => "100%", :wmode => "transparent"}
+            %embed{:allowscriptaccess => "always", :height => "18", :src => "https://player.soundcloud.com/player.swf?url=http%3A%2F%2Fapi.soundcloud.com%2Fplaylists%2F1220342&auto_play=false&player_type=tiny&font=Arial&color=0000ff", :type => "application/x-shockwave-flash", :width => "100%", :wmode => "transparent"}
