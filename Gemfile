@@ -6,8 +6,10 @@ group :framework do
   gem 'jquery-rails'
   gem 'debugger'
   gem 'redcarpet'
-  gem 'haml-rails'
 end
+
+gem 'haml'
+gem 'haml-rails'
 
 group :deployment do
   gem 'capistrano'
