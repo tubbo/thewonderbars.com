@@ -6,5 +6,5 @@ Bread::Application.routes.draw do
   get "/about" => 'facebook#about_us'
   get "/contact" => 'facebook#contact'
 
-  root to: 'pages#index'
+  root to: 'facebook#about_us'
 end
