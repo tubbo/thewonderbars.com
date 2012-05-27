@@ -52,9 +52,9 @@
 
 // The big red links at the bottom of the page.
 @mixin big-red-nav-link {
-  font: 36px $brandon;
+  font: 36px $pt;
   font-weight: bold;
-  padding-left: 35px;
+  padding-left: 30px;
   display: inline-block;
 
   &:link { color: #FF0000; }

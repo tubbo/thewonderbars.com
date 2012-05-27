@@ -248,6 +248,7 @@ DEPENDENCIES
   guard-livereload
   guard-minitest!
   guard-spork
+  haml
   haml-rails
   jquery-rails
   koala
