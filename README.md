@@ -21,9 +21,13 @@ concievably route any vanity URL to a Facebook attribute in `routes.rb`.
 ## Pluggin Away
 
 <http://soundcloud.com/wonderbars>
+
 <http://facebook.com/wonderbars>
+
 <http://twitter.com/wonderbars>
+
 <http://wonderbars.bandcamp.com>
+
 
 ## License
 
