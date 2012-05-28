@@ -54,7 +54,7 @@
 @mixin big-red-nav-link {
   font: 36px $pt;
   font-weight: bold;
-  padding-left: 30px;
+  padding-right: 40px;
   display: inline-block;
 
   &:link { color: #FF0000; }
