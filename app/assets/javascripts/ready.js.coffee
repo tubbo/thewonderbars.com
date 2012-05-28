@@ -4,11 +4,14 @@ jQuery ->
   desktop = $('#desktop')
   spinner = $('#spinner')
 
-  # Spinner gif gets loaded in between requests
+  # Loading image gets shown in between requests.
   desktop.ajaxSend -> spinner.css('display', 'inline')
          .ajaxComplete -> spinner.css('display', 'none')
 
-  # Requests pages with Pjax sorta.
+  $('.close-button').live 'click', (event) ->
+    $(this).closest('div').fadeOut(slowly).remove()
+
+  # Request pages asynchronously, but update the URL
   $('nav a').on 'click', (event) ->
     event.preventDefault()
     link = $(this)

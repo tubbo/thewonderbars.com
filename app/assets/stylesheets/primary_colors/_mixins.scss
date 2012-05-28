@@ -4,7 +4,7 @@
   @if $webkit   {-webkit-border-radius: $radius;}
   @if $ms       {-ms-border-radius:     $radius;}
   border-radius: $radius;
-  behavior:url('/assets/PIE-1.0/PIE.htc');
+  //behavior:url('/assets/PIE-1.0/PIE.htc');
 }
 
 // A #desktop .window on the site. Color scheme for all pages.
@@ -17,10 +17,7 @@
   margin-left: 300px;
   overflow: scroll;
   @include rounded;
-
-  .close {
-
-  }
+  position: relative;
 
   h2 {
     font: $brandon 24px;
@@ -29,6 +26,13 @@
 
   h2,h3,h4,h5,h6,img {
     margin-bottom: 24px;
+  }
+
+  .close-button {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    cursor: pointer;
   }
 
   table {
