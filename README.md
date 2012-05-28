@@ -16,7 +16,6 @@ concievably route any vanity URL to a Facebook attribute in `routes.rb`.
 - Implement mailing list
 - Add mailing list submission form
 - Add mailing list to admin panel
-- 
 
 ## Contributors
 
