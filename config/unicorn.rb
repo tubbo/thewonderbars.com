@@ -1,21 +1,19 @@
-##
-# Unicorn config at <%= @name %>
-# Managed by Chef - Local Changes will be Nuked from Orbit (just to be sure)
-##
+## Unicorn configuration
 
-pid_file = "/mnt/deploy/elocal_web/shared/pids/unicorn.pid"
+# Store the PID in the Capistrano app dir
+pid_file = "/home/necromancer/src/wonderbars/shared/pids/unicorn.pid"
 
 # What ports/sockets to listen on, and what options for them.
 listen "/tmp/unicorn.elocal_web.socket", backlog: 64
 
-working_directory "/mnt/deploy/elocal_web/current"
- 
+working_directory "/home/necromancer/src/wonderbars/current"
+
 # What the timeout for killing busy workers is, in seconds
 timeout 60
- 
+
 # Whether the app should be pre-loaded
 preload_app false
- 
+
 # How many worker processes
 worker_processes 4
 
@@ -48,7 +46,7 @@ end
 pid pid_file
 
 # Where stderr gets logged
-stderr_path "/mnt/deploy/elocal_web/shared/log/unicorn.error.log" 
+stderr_path "/home/necromancer/src/wonderbars/shared/log/error.log" 
 
 # Where stdout gets logged
-stdout_path "/mnt/deploy/elocal_web/shared/log/unicorn.out.log"
+stdout_path "/home/necromancer/src/wonderbars/shared/log/access.log"

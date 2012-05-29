@@ -16,4 +16,7 @@
 
 config/*.yml
 .sass-cache/
+<<<<<<< HEAD
 config/deploy.rb
+=======
+>>>>>>> this example config thing is silly

@@ -1,5 +1,5 @@
 // Style overrides for each specific page.
 
 #contact {
-  a { float: right }
+  h3 { float: right; @include clearfix; }
 }
