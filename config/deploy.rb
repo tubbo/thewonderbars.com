@@ -11,12 +11,9 @@ set :repository,  "git@github.com:tubbo/thewonderbars.com.git"
 set :scm, :git
 
 role :app, "psychedeli.ca"
-#role :app, "thewonderbars.com"
-#role :db,  "thewonderbars.com", :primary => true
 
 set :rvm_ruby_string, '1.9.3-p125@wonderbars'
 set :rvm_type, :user
-
 require 'rvm/capistrano'
 
 server domain, :web
@@ -34,8 +31,7 @@ namespace :deploy do
   task :bundle do
     run "cd #{release_path}; bundle install"
   end
-  task :link_configuration do
-    run "ln -s #{shared_path}/config/unicorn.rb #{release_path}/config/unicorn.rb"
+  task :configuration do
     run "ln -s #{shared_path}/config/database.yml #{release_path}/config/database.yml"
     run "ln -s #{shared_path}/config/facebook.yml #{release_path}/config/facebook.yml"
   end
@@ -104,7 +100,7 @@ namespace :unicorn do
       logger.important("No PIDs found. Starting Unicorn server...", "Unicorn")
       config_path = "#{current_path}/config/unicorn.rb"
       if remote_file_exists?(config_path)
-        run "cd #{current_path} && BUNDLE_GEMFILE=#{current_path}/Gemfile bundle exec unicorn -p 7000 -E #{rails_env} -D"
+        run "cd #{current_path} && BUNDLE_GEMFILE=#{current_path}/Gemfile bundle exec unicorn -E #{rails_env} -c #{config_path} -D"
       else
         logger.important("Config file for unicorn was not found at \"#{config_path}\"", "Unicorn")
       end

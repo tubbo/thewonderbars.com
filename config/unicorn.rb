@@ -4,7 +4,7 @@
 pid_file = "/home/necromancer/src/wonderbars/shared/pids/unicorn.pid"
 
 # What ports/sockets to listen on, and what options for them.
-listen "/tmp/unicorn.elocal_web.socket", backlog: 64
+listen 7000, backlog: 64
 
 working_directory "/home/necromancer/src/wonderbars/current"
 
@@ -46,7 +46,7 @@ end
 pid pid_file
 
 # Where stderr gets logged
-stderr_path "/home/necromancer/src/wonderbars/shared/log/error.log" 
+stderr_path "/home/necromancer/src/wonderbars/shared/log/error.log"
 
 # Where stdout gets logged
 stdout_path "/home/necromancer/src/wonderbars/shared/log/access.log"
