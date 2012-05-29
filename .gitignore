@@ -16,5 +16,4 @@
 
 config/*.yml
 .sass-cache/
-config/unicorn.rb
 config/deploy.rb
