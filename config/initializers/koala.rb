@@ -1,6 +1,6 @@
 module Facebook
   def self.config
-    if Rails.env.stage?
+    if Rails.env.staging?
       ActiveSupport::HashWithIndifferentAccess.new \
         app_id: ENV['FB_APP_ID'],
         secret_key: ENV['FB_SECRET_KEY'],
