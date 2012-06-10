@@ -2,6 +2,7 @@
 # reads from the YAML configuration stored in `config/facebook.yml` for the current Rails environment.
 class FacebookClient
   attr_reader :graph, :oauth, :config
+  attr_accessor :page
 
   # Connects to the open graph.
   def initialize options={}
@@ -20,10 +21,10 @@ class FacebookClient
       if self.has_attribute? attribute
         @page["#{attribute}"]
       else
-        nil
+        raise Facebook::AttributeNotFound
       end
     else
-      raise PageNotFound
+      raise Facebook::PageNotFound
     end
   end
 
@@ -32,7 +33,9 @@ class FacebookClient
   def access_token
     @oauth.get_app_access_token
   end
+end
 
+module Facebook
   # Thrown when the Facebook page doesn't have the attribute requested.
   class AttributeNotFound < StandardError; end
 

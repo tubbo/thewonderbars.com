@@ -1,9 +1,7 @@
 GIT
-  remote: git://github.com/guard/guard-minitest.git
-  revision: c20bb3057804007f7da89d3e3e0f1bce5c1f96fa
+  remote: git://github.com/seattlerb/minitest.git
+  revision: a9ab91eef57aaa2aa2452b00e1e5f84e197655af
   specs:
-    guard-minitest (1.0.0.alpha)
-      guard (~> 1.0)
 
 GEM
   remote: https://rubygems.org/
@@ -80,7 +78,6 @@ GEM
       multipart-post (~> 1.1)
       rack (~> 1.1)
     ffi (1.0.11)
-    growl (1.0.3)
     guard (1.0.1)
       ffi (>= 0.5.0)
       thor (~> 0.14.6)
@@ -92,6 +89,10 @@ GEM
       guard (>= 0.8.3)
       multi_json
       thor
+    guard-minitest (0.5.0)
+      guard (>= 0.4)
+    guard-rails (0.1.0)
+      guard (>= 0.2.2)
     haml (3.1.4)
     haml-rails (0.3.4)
       actionpack (~> 3.0)
@@ -223,10 +224,10 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   debugger
   factory_girl_rails
-  growl
   guard-bundler
   guard-jasmine
-  guard-minitest!
+  guard-minitest
+  guard-rails
   haml
   haml-rails
   heroku
@@ -234,7 +235,7 @@ DEPENDENCIES
   koala
   mini_shoulda
   mini_specunit
-  minitest
+  minitest!
   pg
   rails (= 3.2.3)
   rb-fsevent

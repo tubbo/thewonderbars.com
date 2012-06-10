@@ -8,6 +8,8 @@ class ReleasesController < ApplicationController
 
   # Return a single release by ID
   def show
+    @release = Release.find params[:id]
     render layout: false if request.xhr?
   end
 end
+

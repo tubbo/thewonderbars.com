@@ -6,16 +6,12 @@ require 'bundler'
 Bundler.setup :default, :test
 
 class ActiveSupport::TestCase
-  # Setup all fixtures in test/fixtures/*.(yml|csv) for all tests in alphabetical order.
-  #
-  # Note: You'll currently still have to declare fixtures explicitly in integration tests
-  # -- they do not yet inherit this setting
-  fixtures :all
+  #fixtures :all
 
   Bundler.require :default, :test
 
   VCR.configure do |c|
-    c.cassette_library_dir = 'fixtures/cassettes'
+    c.cassette_library_dir = 'test/fixtures/cassettes'
     c.hook_into :webmock # or :fakeweb
     # c.allow_http_connections_when_no_cassette = true
   end

@@ -4,7 +4,7 @@ require 'rails/all'
 
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
-  Bundler.require *Rails.groups(:assets => %w(development test)), :framework, :api, :views
+  Bundler.require :framework, :api, :views, *Rails.groups(:assets => %w(development test))
 end
 
 module Bread

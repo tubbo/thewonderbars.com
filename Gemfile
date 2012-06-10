@@ -41,15 +41,15 @@ group :test do
   gem 'vcr'
   gem 'webmock'
   gem 'turn', '>= 0.9.3'
-  gem 'minitest'                      # At least v2.0.2 if using MiniShoulda.
-  gem 'mini_specunit'                 # The goods! Force MiniTest::Spec instead of MiniTest::Unit.
-  gem 'mini_shoulda'                  # A small Shoulda syntax on top of MiniTest::Spec.
+  gem 'minitest', git: 'git://github.com/seattlerb/minitest.git'
+  gem 'mini_specunit'
+  gem 'mini_shoulda'
   gem 'factory_girl_rails'
-  gem 'guard-minitest', git: 'git://github.com/guard/guard-minitest.git'
+  gem 'guard-rails', require: false
   gem 'guard-bundler', require: false
   gem 'guard-jasmine', require: false
+  gem 'guard-minitest', require: false
   gem 'rb-fsevent', require: false
-  gem 'growl', require: false
 end
 
 group :production do

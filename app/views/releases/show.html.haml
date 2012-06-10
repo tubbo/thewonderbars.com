@@ -1,2 +1,21 @@
 #release
-  %h2 Single Release
+  %h2= @release.name
+
+  %table.information
+    %tr
+      %th Catalog Number:
+      %td= @release.catalog_number
+    %tr
+      %th Label:
+      %td= @release.record_label
+    %tr
+      %th Released On:
+      %td= @release.released_on.strftime "%m %d, %Y"
+
+  - if @release.has_track_information?
+    %p.tracks
+      =markdown @release.tracks
+
+  - if @release.has_notes?
+    %p.notes
+      =markdown @release.notes
