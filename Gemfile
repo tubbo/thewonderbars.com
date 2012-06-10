@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 group :framework do
   gem 'rails', '3.2.3'
   gem 'pg'
-  gem 'debugger'
 end
 
 group :views do
@@ -34,6 +33,8 @@ end
 
 group :development do
   gem 'thin'
+  gem 'heroku'
+  gem 'debugger'
 end
 
 group :test do
