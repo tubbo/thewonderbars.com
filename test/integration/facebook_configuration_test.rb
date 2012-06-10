@@ -1,14 +1,14 @@
 require 'test_helper'
 
 class FacebookConfigurationTest < ActiveSupport::TestCase
-  {
-    page_id: Facebook::PAGE_ID,
-    application_id: Facebook::APP_ID,
-    secret_key: Facebook::SECRET
-  }.each { |attribute, setting|
-    an = attribute == :application_id ? "a" : "an"
+  Facebook.config.each { |attribute, setting|
+    an = if attribute == 'app_id'
+           "an"
+         else
+           "a"
+         end
 
-    should "have #{an} #{attribute}" do
+    test "have #{an} #{attribute}" do
       %w(equal nil empty).each { |question|
         if question == 'equal'
           refute_equal "", setting
