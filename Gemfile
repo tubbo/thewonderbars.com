@@ -24,7 +24,6 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
   gem 'therubyracer', platform: :ruby
   gem 'bootstrap-sass', '~> 2.0.2'
-  gem 'sproutcore-rails'
 end
 
 group :api do
@@ -32,10 +31,10 @@ group :api do
 end
 
 group :development do
-  gem 'heroku'
-  gem 'thin'
-  gem 'heroku'
-  gem 'debugger'
+  gem 'thin', require: false
+  gem 'heroku', require: false
+  gem 'debugger', require: false
+  gem 'jammit', require: false
 end
 
 group :test do
