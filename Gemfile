@@ -33,8 +33,6 @@ end
 
 group :development do
   gem 'thin'
-  gem 'heroku'
-  gem 'debugger'
 end
 
 group :test do
