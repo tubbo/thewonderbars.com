@@ -6,7 +6,8 @@ class FacebookClient
 
   # Connects to the open graph.
   def initialize options={}
-    @oauth = Koala::Facebook::OAuth.new(Facebook.config)
+    @oauth = Koala::Facebook::OAuth.new \
+        Facebook.config[:app_id], Facebook.config[:secret_key]
     @graph = Koala::Facebook::API.new access_token
     @page = @graph.get_object(Facebook.config[:page_id])
   end
