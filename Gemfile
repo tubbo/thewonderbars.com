@@ -32,6 +32,7 @@ group :api do
 end
 
 group :development do
+  gem 'heroku'
   gem 'thin'
   gem 'heroku'
   gem 'debugger'
