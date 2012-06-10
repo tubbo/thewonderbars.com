@@ -41,7 +41,7 @@ group :test do
   gem 'vcr'
   gem 'webmock'
   gem 'turn', '>= 0.9.3'
-  gem 'minitest', git: 'git://github.com/seattlerb/minitest.git'
+  gem 'minitest'
   gem 'mini_specunit'
   gem 'mini_shoulda'
   gem 'factory_girl_rails'
