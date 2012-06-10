@@ -7,7 +7,7 @@ class FacebookClient
   def initialize options={}
     @oauth = Koala::Facebook::OAuth.new
     @graph = Koala::Facebook::API.new access_token
-    @page = @graph.get_object(Facebook::PAGE_ID)
+    @page = @graph.get_object(Facebook.config[:page_id])
   end
 
   def has_attribute? attribute
