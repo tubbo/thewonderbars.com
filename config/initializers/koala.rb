@@ -1,16 +1,23 @@
 module Facebook
-  CONFIG = YAML.load_file(Rails.root.join("config/facebook.yml"))[Rails.env]
-  APP_ID = CONFIG['app_id']
-  SECRET = CONFIG['secret_key']
-  PAGE_ID = CONFIG['page_id']
+  def self.config
+    if Rails.env.stage?
+      ActiveSupport::HashWithIndifferentAccess.new \
+        app_id: ENV['FB_APP_ID'],
+        secret_key: ENV['FB_SECRET_KEY'],
+        page_id: ENV['FB_PAGE_ID']
+    else
+      ActiveSupport::HashWithIndifferentAccess.new \
+        YAML.load_file(Rails.root.join("config/facebook.yml"))[Rails.env]
+    end
+  end
 end
 
 Koala::Facebook::OAuth.class_eval do
   def initialize_with_default_settings(*args)
     case args.size
       when 0, 1
-        raise "application id and/or secret are not specified in the config" unless Facebook::APP_ID && Facebook::SECRET
-        initialize_without_default_settings(Facebook::APP_ID.to_s, Facebook::SECRET.to_s, args.first)
+        raise "application id and/or secret are not specified in the config" unless Facebook.config[:app_id].present? && Facebook.config[:secret_key].present?
+        initialize_without_default_settings(Facebook.config[:app_id], Facebook.config[:secret], args.first)
       when 2, 3
         initialize_without_default_settings(*args)
     end
