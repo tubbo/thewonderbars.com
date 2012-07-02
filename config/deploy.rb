@@ -44,7 +44,7 @@ namespace :unicorn do
   desc 'Start Unicorn'
   task :start, :roles => :app, :except => {:no_release => true} do
     if remote_file_exists?(unicorn_pid)
-      if process_exists?(unicorn_pid)
+      if remote_process_exists?(unicorn_pid)
         logger.important("Unicorn is already running!", "Unicorn")
         next
       else
@@ -106,20 +106,21 @@ namespace :unicorn do
       end
     end
   end
+
+  def unicorn_pid
+    "#{current_path}/tmp/pids/unicorn.#{application}.#{rails_env}.pid"
+  end
+
+  def remote_file_exists?(full_path)
+    'true' ==  capture("if [ -e #{full_path} ]; then echo 'true'; fi").strip
+  end
+
+  def remote_process_exists?(pid_file)
+    capture("ps -p $(cat #{pid_file}) ; true").strip.split("\n").size == 2
+  end
 end
 
-def unicorn_pid
-  "#{current_path}/tmp/pids/unicorn.#{application}.#{rails_env}.pid"
-end
 
-def remote_file_exists?(full_path)
-  'true' ==  capture("if [ -e #{full_path} ]; then echo 'true'; fi").strip
-end
-
-# Check if process is running
-def remote_process_exists?(pid_file)
-  capture("ps -p $(cat #{pid_file}) ; true").strip.split("\n").size == 2
-end
 
 before "deploy:assets:symlink", "deploy:bundle", "deploy:link_configuration"
 after "deploy:restart", "unicorn:reload"
