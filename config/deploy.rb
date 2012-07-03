@@ -1,6 +1,12 @@
+#
+# thewonderbars.com deployment configuration
+#
+
 require 'bundler'
 Bundler.setup :default, :deployment
 Bundler.require :deployment
+
+require 'bundler/capistrano'
 
 set :user, "necromancer"
 set :domain, "psychedeli.ca"
@@ -14,6 +20,7 @@ role :app, "psychedeli.ca"
 
 set :rvm_ruby_string, '1.9.3-p125@wonderbars'
 set :rvm_type, :user
+
 require 'rvm/capistrano'
 
 server domain, :web
@@ -21,22 +28,13 @@ server domain, :web
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
 
-# if you want to clean up old releases on each deploy uncomment this:
-# after "deploy:restart", "deploy:cleanup"
-
-# if you're still using the script/reaper helper you will need
-# these http://github.com/rails/irs_process_scripts
+before "deploy:assets:symlink", "deploy:bundle", "deploy:configuration"
+after "deploy", "deploy:cleanup", "unicorn:reload"
 
 namespace :deploy do
-  task :bundle do
-    run "cd #{release_path}; bundle install"
-  end
   task :configuration do
     run "ln -s #{shared_path}/config/database.yml #{release_path}/config/database.yml"
     run "ln -s #{shared_path}/config/facebook.yml #{release_path}/config/facebook.yml"
-  end
-  task :restart do
-    run "cd #{release_path}; touch tmp/restart.txt"
   end
 end
 
@@ -106,22 +104,16 @@ namespace :unicorn do
       end
     end
   end
-
-  def unicorn_pid
-    "#{current_path}/tmp/pids/unicorn.#{application}.#{rails_env}.pid"
-  end
-
-  def remote_file_exists?(full_path)
-    'true' ==  capture("if [ -e #{full_path} ]; then echo 'true'; fi").strip
-  end
-
-  def remote_process_exists?(pid_file)
-    capture("ps -p $(cat #{pid_file}) ; true").strip.split("\n").size == 2
-  end
 end
 
+def unicorn_pid
+  "#{current_path}/tmp/pids/unicorn.#{application}.#{rails_env}.pid"
+end
 
+def remote_file_exists?(full_path)
+  'true' ==  capture("if [ -e #{full_path} ]; then echo 'true'; fi").strip
+end
 
-before "deploy:assets:symlink", "deploy:bundle", "deploy:link_configuration"
-after "deploy:restart", "unicorn:reload"
-
+def remote_process_exists?(pid_file)
+  capture("ps -p $(cat #{pid_file}) ; true").strip.split("\n").size == 2
+end

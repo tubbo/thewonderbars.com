@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source :rubygems
 
 group :framework do
   gem 'rails', '3.2.3'
