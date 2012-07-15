@@ -1,6 +1,6 @@
 # Grabs attributes from the Facebook page and displays them. You may optionally define custom actions
 # here which get multiple data sources.
-class FacebookController < ApplicationController
+class Facebook::PageController < ApplicationController
   # Gets any attribute from the Facebook page and displays it in the page_attribute template.
   def action_missing attribute_name
     if facebook.has_attribute? attribute_name
