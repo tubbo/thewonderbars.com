@@ -3,7 +3,7 @@ require 'test_helper'
 class Facebook::ClientTest < ActiveSupport::TestCase
   setup {
     VCR.use_cassette(:facebook) do
-      @facebook = FacebookClient.new
+      @facebook = Facebook::Client.new
     end
   }
 

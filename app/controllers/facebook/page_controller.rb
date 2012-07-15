@@ -34,7 +34,7 @@ class Facebook::PageController < ApplicationController
   
   # Shorthand accessor for the omnipresent Facebook client
   def facebook
-    @facebook_client ||= FacebookClient.new
+    @facebook_client ||= Facebook::Client.new
   end
 
   def use_layout
