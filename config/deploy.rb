@@ -28,7 +28,7 @@ server domain, :web
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
 
-before "deploy:assets:symlink", "deploy:bundle", "deploy:configuration"
+before "deploy:assets:symlink", "deploy:configuration"
 after "deploy", "deploy:cleanup", "unicorn:reload"
 
 namespace :deploy do
