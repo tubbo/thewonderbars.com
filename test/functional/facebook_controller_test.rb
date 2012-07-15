@@ -1,14 +1,23 @@
 require 'test_helper'
 
 class FacebookControllerTest < ActionController::TestCase
-  test "should get about_us" do
-    get :about_us
-    assert_response :success
+  setup do
+    VCR.use_cassette(:facebook_authentication) do
+      @controller = FacebookController.new
+    end
   end
 
-  test "should get contact" do
-    get :contact
-    assert_response :success
+  test "access the bio page" do
+    VCR.use_cassette(:facebook_authentication) do
+      get :about_us
+      assert response.success?
+    end
   end
 
+  test "access the contact page" do
+    VCR.use_cassette(:facebook_authentication) do
+      get :contact
+      assert response.success?
+    end
+  end
 end

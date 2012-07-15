@@ -7,20 +7,6 @@ class Facebook::PageControllerTest < ActionController::TestCase
     end
   end
 
-  test "access the bio page" do
-    VCR.use_cassette(:facebook_authentication) do
-      get :about_us
-      assert response.success?
-    end
-  end
-
-  test "access the contact page" do
-    VCR.use_cassette(:facebook_authentication) do
-      get :contact
-      assert response.success?
-    end
-  end
-
   test "access the event listing" do
     VCR.use_cassette(:facebook_authentication) do
       get :events
