@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class FacebookClientTest < ActiveSupport::TestCase
+class Facebook::ClientTest < ActiveSupport::TestCase
   setup {
     VCR.use_cassette(:facebook) do
       @facebook = FacebookClient.new

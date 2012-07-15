@@ -1,6 +1,6 @@
 # A client for the Facebook Graph API which looks for data on a specific Facebook page or profile. It
 # reads from the YAML configuration stored in `config/facebook.yml` for the current Rails environment.
-class FacebookClient
+class Facebook::Client
   attr_reader :graph, :oauth
   attr_accessor :page
 
