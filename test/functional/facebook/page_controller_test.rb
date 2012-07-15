@@ -1,9 +1,9 @@
 require 'test_helper'
 
-class FacebookControllerTest < ActionController::TestCase
+class Facebook::PageControllerTest < ActionController::TestCase
   setup do
     VCR.use_cassette(:facebook_authentication) do
-      @controller = FacebookController.new 
+      @controller = Facebook::PageController.new 
     end
   end
 
