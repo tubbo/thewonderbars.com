@@ -9,3 +9,4 @@
 /tmp
 .sass-cache/
 config/*.yml
+config/*.yml.backup
