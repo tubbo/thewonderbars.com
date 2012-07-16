@@ -9,6 +9,13 @@ administration) and releases, which contain a full discography of the
 band's musical exports, for which it uses PostgreSQL. One can
 concievably route any vanity URL to a Facebook attribute in `routes.rb`.
 
+## BlueVelvet
+
+This is the original implementation of BlueVelvet, where the engine was
+extracted from. You can see it in action in this branch, 'develop'.
+Check out `FacebookController` to see how one may take advantage of
+inheritance to make the Facebook::Client on your own custom controllers.
+
 ## Roadmap
 
 - Install ActiveAdmin to manage Releases.
