@@ -15,7 +15,7 @@ module ApplicationHelper
   end
 
   def meta_description_from_facebook
-    facebook = FacebookClient.new
+    facebook = Facebook::Client.new
     tag :meta, content: facebook.description, name: "description"
   end
 end
