@@ -3,7 +3,7 @@ source :rubygems
 group :framework do
   gem 'rails', '3.2.3'
   gem 'pg'
-  gem 'blue_velvet', git: 'git://github.com/tubbo/blue_velvet.git'
+  gem 'blue_velvet'
 end
 
 group :views do

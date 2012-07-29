@@ -1,11 +1,3 @@
-GIT
-  remote: git://github.com/tubbo/blue_velvet.git
-  revision: 3c2d0781c325456a8f71da0177fe8319eaff4d54
-  specs:
-    blue_velvet (1.0.0)
-      koala
-      rails (~> 3.2)
-
 GEM
   remote: http://rubygems.org/
   specs:
@@ -43,6 +35,9 @@ GEM
     addressable (2.2.8)
     ansi (1.4.3)
     arel (3.0.2)
+    blue_velvet (1.0.1)
+      koala
+      rails (~> 3.2)
     bootstrap-sass (2.0.4.0)
     builder (3.0.0)
     capistrano (2.12.0)
@@ -236,7 +231,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  blue_velvet!
+  blue_velvet
   bootstrap-sass (~> 2.0.2)
   capistrano
   coffee-rails (~> 3.2.1)
