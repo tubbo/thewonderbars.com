@@ -52,6 +52,10 @@ group :test do
   gem 'rb-fsevent', require: false
 end
 
+group :stage do
+  gem 'unicorn-heroku'
+end
+
 group :production do
   gem 'syslogger'
   gem 'unicorn'
