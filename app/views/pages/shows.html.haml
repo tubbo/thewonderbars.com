@@ -2,11 +2,12 @@
   = image_tag "close.png", class: "close-button"
 
   %h2 Wanna come see us play?
-
   %p
     We post our events on our Facebook page too, so check that for frequent updates!
   %br/
-  %table.table.table-bordered
+
+  %h3 Upcoming Shows
+  %table#upcoming-shows
     %thead
       %tr
         %td Event
@@ -14,6 +15,30 @@
         %td Location
         %td Date
     %tbody
+      %tr
+        %td= link_to "Wonderland", "javascript:alert('Facebook page coming soon.')"
+        %td The Arts Garage
+        %td Philadelphia, PA
+      %tr
+        %td= link_to "BANGARANG!!!", "javascript:alert('Facebook page coming soon.')"
+        %td The HeadHouse
+        %td Philadelphia, PA
+        %td 1/25/2012
+
+  %h3 Past Shows
+  %table#past-shows
+    %thead
+      %tr
+        %td Event
+        %td Venue
+        %td Location
+        %td Date
+    %tbody
+      %tr
+        %td= link_to "BANGARANG!!!", "https://www.facebook.com/events/147387762071941/"
+        %td The HeadHouse
+        %td Philadelphia, PA
+        %td 9/28/2012
       %tr
         %td= link_to "PEX Summer Festival", "http://pexsummerfestival.com"
         %td Ramblewood

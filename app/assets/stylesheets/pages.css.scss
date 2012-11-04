@@ -3,3 +3,8 @@
 #contact {
   h3 { float: right; @include clearfix; }
 }
+
+#upcoming-shows, #past-shows {
+  @extend .table;
+  @extend .table-bordered;
+}
