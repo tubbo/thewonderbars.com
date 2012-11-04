@@ -1,4 +1,6 @@
 class FacebookController < Facebook::PageController
+  caches_page :about_us, :contact
+
   # Accesses 'about', 'description' and 'bio' for a complete "About Us" page.
   def about_us
     @tagline = facebook.about

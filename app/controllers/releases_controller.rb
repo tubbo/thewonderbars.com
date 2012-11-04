@@ -1,5 +1,7 @@
 # The official discography of The Wonder Bars.
 class ReleasesController < ApplicationController
+  caches_page :index
+
   # Return all releases
   def index
     @releases = []
