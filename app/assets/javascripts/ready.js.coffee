@@ -32,6 +32,9 @@ jQuery ->
         if history?
           history.pushState null, "#{link.text()} | The Wonder Bars", link.attr('href')
 
+        if _gaq?
+          _gaq.push(['_trackPageview', link.attr('href')]);
+
       failure: (xhr, error) ->
         alert error
     }
