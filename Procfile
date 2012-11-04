@@ -1,1 +1,1 @@
-web: bundle exec rails server -s unicorn-heroku
+web: bundle exec unicorn-heroku
