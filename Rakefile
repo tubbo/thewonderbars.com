@@ -7,3 +7,4 @@ require 'bundler'
 
 Bread::Application.load_tasks
 
+task :default => ['ci:configure', 'test']

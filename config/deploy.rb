@@ -29,16 +29,14 @@ default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
 
 before "deploy:assets:symlink", "deploy:configuration"
-after "deploy", "deploy:cleanup", "unicorn:reload"
+after "deploy", "deploy:cleanup"
 
 namespace :deploy do
   task :configuration do
     run "ln -s #{shared_path}/config/database.yml #{release_path}/config/database.yml"
     run "ln -s #{shared_path}/config/facebook.yml #{release_path}/config/facebook.yml"
   end
-end
 
-namespace :unicorn do
   desc 'Start Unicorn'
   task :start, :roles => :app, :except => {:no_release => true} do
     if remote_file_exists?(unicorn_pid)
@@ -90,7 +88,7 @@ namespace :unicorn do
   end
 
   desc 'Reload Unicorn'
-  task :reload, :roles => :app, :except => {:no_release => true} do
+  task :restart, :roles => :app, :except => {:no_release => true} do
     if remote_file_exists?(unicorn_pid)
       logger.important("Stopping...", "Unicorn")
       run "#{try_sudo} kill -s USR2 `cat #{unicorn_pid}`"

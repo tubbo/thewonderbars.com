@@ -1,27 +1,34 @@
-development:
+local: &local
   adapter: postgresql
   encoding: unicode
-  database: bread_development
   pool: 5
-  username: bread
+  host: localhost
+  username: wonder
   password:
-  # min_messages: warning
+  #min_messages: warning
 
-# Warning: The database defined as "test" will be erased and
-# re-generated from your development database when you run "rake".
-# Do not set this db to the same as development or production.
+# Local database
+development:
+  <<: *local
+  database: wonderbars_development
+
 test:
-  adapter: postgresql
-  encoding: unicode
-  database: bread_test
-  pool: 5
-  username: bread
-  password:
+  <<: *local
+  database: wonderbars_test
 
 production:
+  <<: *local
+  database: wonderbars_production
+
+# Heroku
+stage:
   adapter: postgresql
   encoding: unicode
-  database: bread_production
-  pool: 5
-  username: bread
+  host:
+  port:
+  database:
+  pool:
+  username:
   password:
+
+
