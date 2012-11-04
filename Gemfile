@@ -53,7 +53,7 @@ group :test do
 end
 
 group :stage do
-  gem 'unicorn-heroku'
+  gem 'thin'
 end
 
 group :production do
