@@ -34,7 +34,6 @@ end
 group :development do
   gem 'thin', require: false
   gem 'heroku', require: false
-  gem 'debugger', require: false
   gem 'jammit', require: false
 end
 
