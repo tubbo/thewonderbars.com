@@ -17,9 +17,9 @@ header {
 // anywhere.
 #desktop {
   padding: 50px;
-  min-height: 582px;
+  height: 600px;
 
-  div { @include wonder-window }
+  div { @include wonder-window; top: -50px; }
   #spinner { @include ridin-spinnas }
 }
 
@@ -31,7 +31,7 @@ footer {
     a { @include big-red-nav-link }
   }
 
-  #player { margin: 30px 30px 0px 30px }
+  #player { margin: 15px 0px 0px 30px; }
 
   .fb-like { margin: 30px }
   /*.twitter-follow-button { margin: 30px }*/
