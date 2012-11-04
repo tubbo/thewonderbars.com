@@ -212,6 +212,10 @@ GEM
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
+    unicorn-heroku (4.3.1.1.gc608.dirty)
+      kgio (~> 2.6)
+      rack
+      raindrops (~> 0.7)
     vcr (2.2.4)
     webmock (1.8.8)
       addressable (~> 2.2.8)
@@ -254,5 +258,6 @@ DEPENDENCIES
   turn (>= 0.9.3)
   uglifier (>= 1.0.3)
   unicorn
+  unicorn-heroku
   vcr
   webmock
