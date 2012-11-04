@@ -107,7 +107,7 @@ namespace :unicorn do
 end
 
 def unicorn_pid
-  "#{current_path}/tmp/pids/unicorn.#{application}.#{rails_env}.pid"
+  "/home/necromancer/src/wonderbars/shared/pids/unicorn.pid"
 end
 
 def remote_file_exists?(full_path)
