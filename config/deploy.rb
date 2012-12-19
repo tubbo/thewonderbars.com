@@ -33,7 +33,6 @@ after "deploy", "deploy:cleanup"
 
 namespace :deploy do
   task :configuration do
-    run "ln -s #{shared_path}/config/database.yml #{release_path}/config/database.yml"
     run "ln -s #{shared_path}/config/facebook.yml #{release_path}/config/facebook.yml"
   end
 
