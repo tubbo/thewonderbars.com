@@ -4,6 +4,7 @@ require 'rails/test_help'
 
 require 'bundler'
 Bundler.setup :default, :test
+require 'blue_velvet'
 
 class ActiveSupport::TestCase
   #fixtures :all
