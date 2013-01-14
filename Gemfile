@@ -1,5 +1,7 @@
 source :rubygems
 
+gem 'airbrake'
+
 group :framework do
   gem 'rails', '3.2.3'
   gem 'pg'
