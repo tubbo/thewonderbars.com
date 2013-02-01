@@ -1,7 +1,7 @@
 source :rubygems
 
 gem 'airbrake'
-gem 'rails', '3.2.3'
+gem 'rails', '3.2.11'
 gem 'pg'
 gem 'blue_velvet', '~> 1.0'
 
