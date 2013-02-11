@@ -102,5 +102,12 @@ end
         assert_equal type, @response.response_code, message
       end
     end
+
+ActionDispatch::Assertions::ResponseAssertions.instance_eval do
+  # Override so deprecation warnings stop popping up. This uses a proper
+  # +assert+ method but retains the functionality of +assert_response+.
+  define_method(:assert_response_test) do |expected_status|
+    response_status = response.send :status
+    assert_equal response_status, expected_status, "Expected response to be <#{expected_status}>, but was <#{response_status}>" 
   end
 end
