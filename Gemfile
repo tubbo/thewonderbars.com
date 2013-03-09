@@ -1,9 +1,9 @@
-source :rubygems
+source 'https://rubygems.org'
 
-gem 'airbrake'
-gem 'rails', '3.2.11'
+gem 'rails', '3.2.12'
 gem 'pg'
 gem 'blue_velvet', '~> 1.0'
+gem 'airbrake'
 
 group :views do
   gem 'haml-rails'
