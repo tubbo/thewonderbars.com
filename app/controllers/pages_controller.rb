@@ -1,12 +1,13 @@
 # Includes static content exclusive to this site. If we need it.
-class PagesController < ApplicationController
-  caches_page :index, :shows
+class PagesController < HighVoltage::PagesController
+  layout :unless_xhr
 
-  def index
-    render layout: false if request.xhr?
-  end
-
-  def shows
-    render layout: false if request.xhr?
+protected
+  def unless_xhr
+    if request.xhr?
+      false
+    else
+      'application'
+    end
   end
 end

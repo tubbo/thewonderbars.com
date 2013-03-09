@@ -4,6 +4,7 @@ gem 'rails', '3.2.12'
 gem 'pg'
 gem 'blue_velvet', '~> 1.0'
 gem 'airbrake'
+gem 'high_voltage'
 
 group :views do
   gem 'haml-rails'

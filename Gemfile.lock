@@ -109,6 +109,7 @@ GEM
       rubyzip
     heroku-api (0.3.6)
       excon (~> 0.16.7)
+    high_voltage (1.2.2)
     highline (1.6.15)
     hike (1.2.1)
     i18n (0.6.4)
@@ -250,6 +251,7 @@ DEPENDENCIES
   haml
   haml-rails
   heroku
+  high_voltage
   jammit
   jquery-rails
   koala
