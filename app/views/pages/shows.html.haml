@@ -1,10 +1,11 @@
 #shows
   = image_tag "close.png", class: "close-button"
 
-  %h2 Wanna come see us play?
-  %p
-    We post our events on our Facebook page too, so check that for frequent updates!
-  %br/
+  :markdown
+    ## Wanna come see us play?
+
+    We post new events on our [Facebook page](http://facebook.com/wonderbars)
+    as soon as they're announced, so check that for frequent updates!
 
   %h3 Upcoming Shows
   %table#upcoming-shows
@@ -16,15 +17,30 @@
         %td Date
     %tbody
       %tr
-        %td= link_to "Wonderland", "javascript:alert('Facebook page coming soon.')"
-        %td The Arts Garage
+        %td= link_to_placeholder "Big Ups: The Bangarang Afterparty"
+        %td Secret Warehouse Location
         %td Philadelphia, PA
-        %td 12/7/2012
+        %td 4/5/2013
       %tr
-        %td= link_to "BANGARANG!!!", "javascript:alert('Facebook page coming soon.')"
-        %td The HeadHouse
+        %td= link_to_placeholder "After Karnival"
+        %td Secret Warehouse Location
         %td Philadelphia, PA
-        %td 1/25/2012
+        %td 5/4/2013
+      %tr
+        %td= link_to_placeholder "WARMUP"
+        %td TBA
+        %td Philadelphia, PA
+        %td 6/4/2013
+      %tr
+        %td= link_to_placeholder "Freeform Arts Festival"
+        %td Salem County Fairgrounds
+        %td New Jersey
+        %td 6/13/2013
+      %tr
+        %td= link_to_placeholder "TBA"
+        %td TBA
+        %td Darlington, MD
+        %td 7/4/2013
 
   %h3 Past Shows
   %table#past-shows
@@ -36,12 +52,53 @@
         %td Date
     %tbody
       %tr
-        %td= link_to "BANGARANG!!!", "https://www.facebook.com/events/147387762071941/"
-        %td The HeadHouse
-        %td Philadelphia, PA
-        %td 9/28/2012
+        %td= link_to "PEX Summer Festival 2009", "http://pexsummerfestival.com"
+        %td Ramblewood
+        %td Darlington, MD
+        %td 7/2/2009
       %tr
-        %td= link_to "PEX Summer Festival", "http://pexsummerfestival.com"
+        %td= link_to "PEX Halloween Decom 2009", "http://thephiladelphiaexperiment.org"
+        %td Secret Warehouse Location
+        %td Philadelphia, PA
+        %td 10/31/2009
+      %tr
+        %td= link_to "PEX Summer Festival 2010", "http://pexsummerfestival.com"
+        %td Ramblewood
+        %td Darlington, MD
+        %td 7/3/2010
+      %tr
+        %td= link_to "PEX Halloween Decom 2010", "http://thephiladelphiaexperiment.org"
+        %td Secret Warehouse Location
+        %td Philadelphia, PA
+        %td 10/25/2010
+      %tr
+        %td= link_to "HeartBurn 2011", "http://thephiladelphiaexperiment.org"
+        %td Secret Warehouse Location
+        %td Philadelphia, PA
+        %td 2/15/2011
+      %tr
+        %td= link_to "PEX Summer Festival 2011", "http://pexsummerfestival.com"
+        %td Ramblewood
+        %td Darlington, MD
+        %td 7/1/2011
+      %tr
+        %td= link_to "PEX Halloween Decom 2011", "http://thephiladelphiaexperiment.org"
+        %td Battleship New Jersey
+        %td Camden, NJ
+        %td 10/27/2011
+      %tr
+        %td= link_to "PEX Summer Festival 2012", "http://pexsummerfestival.com"
         %td Ramblewood
         %td Darlington, MD
         %td 7/1/2012
+      %tr
+        %td= link_to "BANGARANG!!!", "https://www.facebook.com/events/147387762071941/"
+        %td The HeadHouse
+        %td Philadelphia, PA
+        %td 10/26/2012
+      %tr
+        %td= link_to "Come Correct", "https://www.facebook.com/events/377400385685894/"
+        %td Underground Arts
+        %td Philadelphia, PA
+        %td 1/27/2013
+
