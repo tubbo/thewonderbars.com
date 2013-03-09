@@ -1,9 +1,12 @@
-module ApplicationHelper
+# Global view methods for modifying the page title.
+module TitleHelper
+  # Set the new title on the page.
   def title new_title
     content_for :title, new_title
     content_tag :h2, new_title
   end
 
+  # Render a +<title>+ tag in the header.
   def title_tag
     page_title = content_for :title
 
@@ -12,10 +15,5 @@ module ApplicationHelper
     else
       content_tag :title, "The Wonder Bars | Philly House Music"
     end
-  end
-
-  def meta_description_from_facebook
-    facebook = Facebook::Client.new
-    tag :meta, content: facebook.description, name: "description"
   end
 end
