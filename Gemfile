@@ -13,22 +13,12 @@ group :views do
   gem 'redcarpet'
 end
 
-group :deployment do
-  gem 'capistrano'
-  gem 'rvm'
-  gem 'rvm-capistrano', require: false
-end
-
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
   gem 'therubyracer', platform: :ruby
   gem 'bootstrap-sass', '~> 2.0.2'
-end
-
-group :api do
-  gem 'koala'
 end
 
 group :development do
@@ -45,11 +35,6 @@ group :test do
   gem 'mini_specunit'
   gem 'mini_shoulda'
   gem 'factory_girl_rails'
-  gem 'guard-rails', require: false
-  gem 'guard-bundler', require: false
-  gem 'guard-jasmine', require: false
-  gem 'guard-minitest', require: false
-  gem 'rb-fsevent', require: false
 end
 
 group :stage do
