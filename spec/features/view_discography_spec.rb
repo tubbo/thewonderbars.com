@@ -26,7 +26,7 @@ feature "Discography" do
     end
 
     it "renders release details in a table" do
-      expect(page).to have_selector '.details'
+      expect(page).to have_selector '.information'
     end
 
     it "can be navigated to other releases"
