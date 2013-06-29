@@ -1,23 +1,23 @@
 require 'test_helper'
 
-class FacebookControllerTest < ActionController::TestCase
+describe "FacebookController", ActionController::TestCase do
   setup do
     VCR.use_cassette :facebook_authentication do
       @controller = FacebookController.new
     end
   end
 
-  test "access the bio page" do
+  it "access the bio page" do
     VCR.use_cassette :facebook_authentication do
       get :about_us
-      assert response.success?
+      response.success?.should.not == nil
     end
   end
 
-  test "access the contact page" do
+  it "access the contact page" do
     VCR.use_cassette :facebook_authentication do
       get :contact
-      assert response.success?
+      response.success?.should.not == nil
     end
   end
 end

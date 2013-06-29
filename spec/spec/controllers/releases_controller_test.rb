@@ -1,28 +1,28 @@
 require 'test_helper'
 
-class ReleasesControllerTest < ActionController::TestCase
+describe "ReleasesController", ActionController::TestCase do
   setup do
     @controller = ReleasesController.new
     @release = FactoryGirl.create :extended_play_release
   end
 
-  context "ReleasesController#show" do
+  describe "ReleasesController#show" do
     setup { get :show, id: @release.id }
 
-    test "shows all required attributes in a table" do
+    it "shows all required attributes in a table" do
       get :show, id: @release.id
 
       assert_response :success
       assert_select "table"
     end
 
-    test "parses track listing into html from markdown" do
+    it "parses track listing into html from markdown" do
       assert_response :success
       assert_select ".tracks"
       assert_select ".tracks ol"
     end
 
-    test "parses notes into html from markdown" do
+    it "parses notes into html from markdown" do
       assert_response :success
       assert_select ".notes"
       assert_select ".notes p"
@@ -31,10 +31,10 @@ class ReleasesControllerTest < ActionController::TestCase
     end
   end
 
-  context "ReleasesController#index" do
+  describe "ReleasesController#index" do
     setup { get :index }
 
-    test "shows all releases in a smaller table" do
+    it "shows all releases in a smaller table" do
       assert_response :success
       assert_select "h2", "All Releases"
     end

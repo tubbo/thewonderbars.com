@@ -24,6 +24,7 @@ group :test do
   gem 'factory_girl_rails'
   gem 'rspec-rails'
   gem 'capybara'
+  gem 'spec_converter'
 end
 
 group :test, :development do
