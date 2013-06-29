@@ -2,7 +2,7 @@
   = image_tag "close.png", class: "close-button"
 
   %h2 All Releases
-  %table
+  %table#all_releases
     - if releases.empty?
       %p None yet, stay tuned!
     - else
