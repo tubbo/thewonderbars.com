@@ -3,7 +3,6 @@
   %head
     = title_tag
     = stylesheet_link_tag    "application", :media => "all"
-    = javascript_include_tag "application"
     = csrf_meta_tags
     - unless Rails.env.test?
       = meta_description_from_facebook unless Rails.env.test?
@@ -24,12 +23,7 @@
             = link_to "Music",     releases_path, title: "What We Sound Like",        class: "link"
             = link_to "About",     about_path,    title: "Who Are The Wonder Bars?",  class: "link"
             = link_to "Contact",   contact_path,  title: "Make Contact",              class: "link"
-          %object{:id => "player", :height => "18", :width => "100%"}
-            %param{:name => "movie", :value => "https://player.soundcloud.com/player.swf?url=http%3A%2F%2Fapi.soundcloud.com%2Fplaylists%2F1220342&auto_play=false&player_type=tiny&font=Arial&color=0000ff"}
-            %param{:name => "allowscriptaccess", :value => "always"}
-            %param{:name => "wmode", :value => "transparent"}
-            %embed{:allowscriptaccess => "always", :height => "18", :src => "https://player.soundcloud.com/player.swf?url=http%3A%2F%2Fapi.soundcloud.com%2Fplaylists%2F1220342&auto_play=false&player_type=tiny&font=Arial&color=0000ff", :type => "application/x-shockwave-flash", :width => "100%", :wmode => "transparent"}
-          .fb-like{"data-font" => "verdana", "data-href" => "http://facebook.com/wonderbars", "data-send" => "true", "data-show-faces" => "false", "data-width" => "450"}
-          %a.twitter-follow-button{"data-show-count" => "false", :href => "https://twitter.com/wonderbars"} Follow @wonderbars
-          :javascript
-            !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+          = render 'social/soundcloud'
+          = render 'social/facebook'
+          = render 'social/twitter'
+  = javascript_include_tag "application"
