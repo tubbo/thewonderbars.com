@@ -2,10 +2,9 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 
-if defined?(Bundler)
-  # If you precompile assets before deploying to production, use this line
-  Bundler.require :framework, :api, :views, *Rails.groups(:assets => %w(development test))
-end
+Bundler.require :default, Rails.env, *Rails.groups(assets: %w(development test))
+
+require 'pry' unless %w(development test).include? Rails.env
 
 module Bread
   class Application < Rails::Application
