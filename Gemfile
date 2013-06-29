@@ -12,13 +12,13 @@ gem 'hike' # i have no idea why i need this..
 gem 'draper'
 gem 'actionpack-page_caching'
 gem 'actionpack-action_caching'
+gem 'bootstrap-sass'
 
 group :assets do
   gem 'sass-rails',   '~> 4.0'
   gem 'coffee-rails', '~> 4.0'
   gem 'uglifier', '~> 1.3'
   gem 'therubyracer', platform: :ruby
-  gem 'bootstrap-sass', '~> 2.0.2'
 end
 
 group :test do

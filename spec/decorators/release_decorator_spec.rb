@@ -9,6 +9,6 @@ describe ReleaseDecorator do
   end
 
   it "formats the date accordingly" do
-    expect(subject.date).to eq("2012-08-25")
+    expect(subject.date).to eq("August 25, 2012")
   end
 end

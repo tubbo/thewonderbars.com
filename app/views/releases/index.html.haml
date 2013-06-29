@@ -3,14 +3,14 @@
 
   %h2 All Releases
   %table
-    - if @releases.empty?
+    - if releases.empty?
       %p None yet, stay tuned!
     - else
       %thead
         %td (Catalog Number) Name
         %td Released on
       %tbody
-        - @releases.each do |release|
+        - releases.each do |release|
           %tr
             %td= release.name_and_catalog_number
             %td= release.date

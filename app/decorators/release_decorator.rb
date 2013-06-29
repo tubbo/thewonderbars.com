@@ -6,6 +6,6 @@ class ReleaseDecorator < Draper::Decorator
   end
 
   def date
-    source.released_on.strftime '%m %d, %y'
+    source.released_on.strftime '%B %e, %Y'
   end
 end
