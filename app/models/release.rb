@@ -1,5 +1,4 @@
 class Release < ActiveRecord::Base
-  #attr_accessible :catalog_number, :record_label, :name, :notes, :tracks, :released_on
   validates :name, presence: true
   validates :catalog_number, presence: true
   validates :record_label, presence: true

@@ -1,10 +1,10 @@
 # The official discography of The Wonder Bars.
 class ReleasesController < ApplicationController
-  caches_page :index
+  caches_action :index
 
   # Return all releases
   def index
-    @releases = Release.all.decorate_collection
+    @releases = Release.where(search_filters).decorate_collection
     render layout: false if request.xhr?
   end
 
@@ -12,6 +12,11 @@ class ReleasesController < ApplicationController
   def show
     @release = Release.find(params[:id]).decorate
     render layout: false if request.xhr?
+  end
+
+private
+  def search_filters
+    params.permit(:name, :catalog_number, :released_on)
   end
 end
 
