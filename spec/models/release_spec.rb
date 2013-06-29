@@ -6,7 +6,6 @@ describe Release do
 
   it "validates all required fields" do
     release.should be_valid
-    blank_release.should_not be_valid
   end
 
   it "accurately reports whether release notes are included" do

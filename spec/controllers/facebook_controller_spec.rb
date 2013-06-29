@@ -10,14 +10,14 @@ describe FacebookController do
   it "accesses the bio page" do
     VCR.use_cassette :facebook_authentication do
       get :about_us
-      response.success?.should.not == nil
+      response.success?.should_not == nil
     end
   end
 
   it "accesses the contact page" do
     VCR.use_cassette :facebook_authentication do
       get :contact
-      response.success?.should.not == nil
+      response.success?.should_not == nil
     end
   end
 end

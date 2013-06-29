@@ -1,4 +1,4 @@
-require 'test_helper'
+require 'spec_helper'
 
 describe ReleasesController do
   let(:release) { FactoryGirl.create :extended_play_release }
