@@ -16,9 +16,19 @@ feature "Discography" do
     let(:release) { releases :just_the_start }
     before { visit "/releases/#{release.id}" }
 
-    it "renders the title of the release"
-    it "renders the album art image"
-    it "renders release details in a table"
+    it "renders the title of the release" do
+      expect(page).to have_content release.name
+      expect(page).to have_content release.catalog_number
+    end
+
+    it "renders the album art image" do
+      expect(page).to have_selector '.album_art img'
+    end
+
+    it "renders release details in a table" do
+      expect(page).to have_selector '.details'
+    end
+
     it "can be navigated to other releases"
   end
 end

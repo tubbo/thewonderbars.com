@@ -13,6 +13,8 @@ gem 'draper'
 gem 'actionpack-page_caching'
 gem 'actionpack-action_caching'
 gem 'bootstrap-sass'
+gem 'carrierwave'
+gem 'fog'
 
 group :assets do
   gem 'sass-rails',   '~> 4.0'
@@ -24,10 +26,8 @@ end
 group :test do
   gem 'vcr'
   gem 'webmock'
-  gem 'factory_girl_rails'
   gem 'rspec-rails'
   gem 'capybara'
-  gem 'spec_converter'
 end
 
 group :test, :development do

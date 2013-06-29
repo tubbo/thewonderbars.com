@@ -3,3 +3,6 @@ just_the_start:
   catalog_number: "WXP-001"
   record_label: "Wax Poetic"
   released_on: <%= Date.parse '2012-08-25' %>
+  notes: "These are the release notes."
+  tracks: "These are the tracks for now."
+  artwork: 'file.png'

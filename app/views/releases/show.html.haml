@@ -1,6 +1,9 @@
 #release
   %h2= @release.name
 
+  .album_art
+    = image_tag @release.artwork.path
+
   %table.information
     %tr
       %th Catalog Number:

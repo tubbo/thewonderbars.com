@@ -1,11 +1,13 @@
 require 'spec_helper'
 
 describe Release do
-  let(:blank_release) { FactoryGirl.create :release }
-  let(:release) { FactoryGirl.create :extended_play_release }
+  fixtures :releases
+  let(:blank_release) { Release.new }
+  let(:release) { releases :just_the_start }
 
   it "validates all required fields" do
     release.should be_valid
+    blank_release.should_not be_valid
   end
 
   it "accurately reports whether release notes are included" do
@@ -16,5 +18,9 @@ describe Release do
   it "accurately reports whether track information is included" do
     release.should have_track_information
     blank_release.should_not have_track_information
+  end
+
+  it "includes album artwork" do
+    release.artwork.should_not be_blank
   end
 end

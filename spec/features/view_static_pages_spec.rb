@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 feature "Static pages" do
-
   context "for the shows listing" do
     before { visit '/shows' }
 
@@ -9,8 +8,13 @@ feature "Static pages" do
       expect(page).to have_content "Wanna come see us play?"
     end
 
-    it "renders the upcoming shows table"
-    it "renders the past shows table"
+    it "renders the upcoming shows table" do
+      expect(page).to have_selector '#upcoming-shows'
+    end
+
+    it "renders the past shows table" do
+      expect(page).to have_selector '#past-shows'
+    end
   end
 
   context "for the contact page" do

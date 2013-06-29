@@ -1,7 +1,8 @@
 require 'spec_helper'
 
 describe ReleasesController do
-  let(:release) { FactoryGirl.create :extended_play_release }
+  fixtures :releases
+  let(:release) { releases :just_the_start }
 
   it "returns all releases" do
     get :index
