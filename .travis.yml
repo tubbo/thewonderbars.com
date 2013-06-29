@@ -1,32 +1,3 @@
-env:
-  global:
-    secure:
-    - "Bvlfi1/Vd8m+pt+2qaxBr6mcsn1KpANi3zCLjotK0VCoot3dezangCF2r0sm\n8iymQ5nb0WElPXX1F7su9SHOByXsSSBtgSbcS7J5b6epGLwpHuQYbEKQl65C\nGR029SRr2iEdPA8tZF8sIxV1uepgj8Dhjz8NmFJFqcadyBhcsto="
-    - "ILZOKogRY0EyKSDqOC7STaUBEhQ4h3lKXfPjm1NYTot4CjgnqML2TiC8/scX\nMoRVUjavbAwg+ydye4EnW6x+kYHIE6YnM4aJ4oePTRqqrIwbjGcbr0GLcDM+\n8saz62yxSFl4fuEPXfHsWoVdx6zrqDgtqv/L9O8ZrRBUBdXrGXA="
-    - "Ur3BWPpS1f24rYsP8ZlBwYzPqhAso0tyqWsHi5vXAnyuJ5CIer6Ej0yfPNgW\nMBVY6qa7RdWo4K8QpFYo6im/z2/OZpAdffZm8T2ENgLmWqCKXeU5D1WS6xxR\noUta69liqzHEBVWQE29utSrNI6aBZPU1I6D4oZzrRBuL5x7PrFw="
-    - "NRDlzQeFxOsVbejhpMTda4avRCEfBcOUC7JqSkoz27nT6gppT2pEAWdldd1P\nK27Oe/xofz9NAEECWMuTnEIUv/vk0OCCQWd4a8EDJlOg5nuzuQBZp4eVsHTD\nMUfUAwvTwvbDBZNhB52zPmsWc0aHmBPK5kV8lT3wu2PCkj1oDNg="
-    - "JMj2R+nvFuLwI1y2ZlwIdOGCqhtZYQHg66jcBGZ4tFyVqiQkc2g2XADSKu1R\npWwjfXJiHIvDzcc+Eim6ZXoJowsfj4TjyLUxPoV5cYIVGZaxzgXhHlgu5X4K\nl340MtmnryRRT5F/IxYij+frH2qqv0JGNrpLjSsnjYKo/6/ittQ="
 language: ruby
-bundler_args: "--without=development"
-#before_install:
-#  - "export DISPLAY=:99.0"
-#  - "sh -e /etc/init.d/xvfb start"
-before_script:
-  - "createuser -s wonder && rake db:setup"
-script: "bundle exec rake test"
-after_success:
-  # Install the Heroku gem (or the Heroku toolbelt)
-  - "gem install heroku"
-  # Add your Heroku git repo:
-  - "git remote add heroku git@heroku.com:wonderbars.git"
-  # Turn off warnings about SSH keys:
-  - "echo 'Host heroku.com' >> ~/.ssh/config"
-  - "echo '   StrictHostKeyChecking no' >> ~/.ssh/config"
-  - "echo '   CheckHostIP no' >> ~/.ssh/config"
-  - "echo '   UserKnownHostsFile=/dev/null' >> ~/.ssh/config"
-  # Clear your current Heroku SSH keys:
-  - "heroku keys:clear"
-  # Add a new SSH key to Heroku
-  - "yes | heroku keys:add"
-  # Push to Heroku!
-  - "yes | git push heroku master"
+rvm:
+  - 2.0.0
