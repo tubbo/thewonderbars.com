@@ -2,4 +2,4 @@ just_the_start:
   name: "Just The Start EP"
   catalog_number: "WXP-001"
   record_label: "Wax Poetic"
-  released_on: '2012-08-25'
+  released_on: <%= Date.parse '2012-08-25' %>

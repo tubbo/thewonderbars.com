@@ -14,7 +14,11 @@ feature "Static pages" do
   end
 
   context "for the contact page" do
-    before { visit '/contact' }
+    before do
+      VCR.use_cassette :facebook_authentication do
+        visit '/contact'
+      end
+    end
 
     it "renders the static content" do
       expect(page).to have_content 'Contact The Wonder Bars'

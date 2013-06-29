@@ -1,10 +1,16 @@
 #releases
   = image_tag "close.png", class: "close-button"
 
-  %h2 What We Play
-
-  %iframe{:frameborder => "no", :height => "450", :scrolling => "no", :src => "http://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Fplaylists%2F1220342&auto_play=true&show_artwork=true&color=ff0000", :width => "100%"}
-
   %h2 All Releases
-
-  %p= "None added yet. Stay tuned!" if @releases.empty?
+  %table
+    - if @releases.empty?
+      %p None yet, stay tuned!
+    - else
+      %thead
+        %td (Catalog Number) Name
+        %td Released on
+      %tbody
+        - @releases.each do |release|
+          %tr
+            %td= release.name_and_catalog_number
+            %td= release.date

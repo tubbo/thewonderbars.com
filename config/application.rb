@@ -55,7 +55,7 @@ module Bread
 
     config.generators do |g|
       g.template_engine :haml
-      g.test_framework :test_unit, fixtures: false, fixture_replacement: :factory_girl
+      g.test_framework :rspec, fixtures: true
     end
   end
 end

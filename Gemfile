@@ -8,7 +8,8 @@ gem 'haml-rails'
 gem 'jquery-rails'
 gem 'redcarpet'
 gem 'thin'
-gem 'hike'
+gem 'hike' # i have no idea why i need this..
+gem 'draper'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
