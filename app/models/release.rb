@@ -1,6 +1,9 @@
 class Release < ActiveRecord::Base
-  attr_accessible :catalog_number, :record_label, :name, :notes, :tracks, :released_on
-  validates_presence_of :name, :record_label, :catalog_number, :released_on
+  #attr_accessible :catalog_number, :record_label, :name, :notes, :tracks, :released_on
+  validates :name, presence: true
+  validates :catalog_number, presence: true
+  validates :record_label, presence: true
+  validates :released_on, presence: true
 
   def has_track_information?
     self.tracks.present?
