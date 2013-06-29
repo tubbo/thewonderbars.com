@@ -8,7 +8,6 @@ gem 'haml-rails'
 gem 'jquery-rails'
 gem 'redcarpet'
 gem 'thin'
-gem 'koala'
 gem 'hike'
 
 group :assets do
@@ -22,11 +21,9 @@ end
 group :test do
   gem 'vcr'
   gem 'webmock'
-  gem 'turn', '>= 0.9.3'
-  gem 'minitest'
-  gem 'mini_specunit'
-  gem 'mini_shoulda'
   gem 'factory_girl_rails'
+  gem 'rspec-rails'
+  gem 'capybara'
 end
 
 group :test, :development do
