@@ -218,6 +218,7 @@ DEPENDENCIES
   pg
   pry-rails
   rails (= 4.0.0)
+  rake
   redcarpet
   rspec-rails
   sass-rails (~> 4.0)

@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
+ruby '1.9.3'
 
 gem 'rails', '4.0.0'
+gem 'rake', require: false
 gem 'pg'
 gem 'blue_velvet', path: '../../Code/blue_velvet'
 gem 'high_voltage'
