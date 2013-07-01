@@ -1,3 +1,8 @@
+env:
+ secure:
+  - "PC0TW+zicoFfrdciTSpeuSHjLvhjqboPCspjT0YCK13wi8KvE/Oc0/bkZF8Y\naf4AbdEOmygiYi5r6WAnf1I5tBkktTOKCtkNdzoxGI7nMOouSv1HMWoc2Tdh\n0RHbj5ffrSd9I2/kvVqO9AtE2jKbeFb88c4U2A2ZkVjZRm1jzHg="
+  - "KrKxi/pJdFAvZP9axnrMu3jJR28KQxHqJhitnnig5r56HSAlMmURmgPaw+UU\nRejZNopOaResjZcujM84Y/LxJ8jIkpsb/nJC83jPo+WXa71pyjMgcvPaZevW\nLXututA6zrRxg6bjgCFhY6MqpP+ekZw8L1od6BUGHJfN9oAq3TU="
+  - "XbxMkys964bwAyjjDe6hu/UF9Sc9auEdDXXnQfhIVd8OOUDZbIVZtNVd3POG\nb49zga+S0TWlpm/yDahOeYdCnk4LRlE+eHPeWtaELF+nI00NVAJI01ex9JNZ\np2P7E/xkY/2/qezxaq/jXWHY22nOKAHuWxzPeBBG6EEGoZXw14k="
 language: ruby
 rvm: 1.9.3
 bundler_args: '--without=development,production'
