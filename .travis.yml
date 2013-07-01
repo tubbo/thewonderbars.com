@@ -1,4 +1,4 @@
 language: ruby
 rvm: 1.9.3
 bundler_args: '--without=development,production'
-before_script: 'createuser -s wonder && rake test:config'
+before_script: 'createuser -s wonder && bundle exec rake config'

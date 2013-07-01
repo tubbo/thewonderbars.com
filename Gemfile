@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 ruby '1.9.3'
 
 gem 'rails', '4.0.0'
-gem 'rake', require: false
+gem 'rake', '~> 10.1', require: false
 gem 'pg'
 gem 'blue_velvet'
 gem 'high_voltage'
@@ -17,6 +17,8 @@ gem 'actionpack-action_caching'
 gem 'bootstrap-sass'
 gem 'carrierwave'
 gem 'fog'
+gem 'rails-backbone'
+gem 'haml_coffee_assets'
 
 group :assets do
   gem 'sass-rails',   '~> 4.0'
